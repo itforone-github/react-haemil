@@ -1,0 +1,56 @@
+/**공통**/
+
+/*메인상단*/
+.page-wrapper header{padding-left: 70px; transition: all 0.3s ease;}
+.page-wrapper footer{padding-left: 0px; transition: all 0.3s ease;}
+.page-wrapper.toggled header,
+.page-wrapper.toggled footer{padding-left: 290px; transition: all 0.3s ease;}
+
+header{position: relative; background-color: #fff;}
+.tnb{padding: 26px 42px;}
+.tnb a{display:inline-block; color: #484951; vertical-align: middle; margin-right: 20px; font-size: 1.1em;}
+.tnb a:last-child{margin-right: 0;}
+.tnb a img{margin-right:6px; vertical-align: middle; margin-bottom: 2px;}
+
+/*서브타이틀*/
+main{min-height: calc(100vh - 200px);}
+h2{color: #707070; opacity: 0.33; margin-bottom: 37px;}
+h2 strong{font-size: 2.2em; font-weight: 400;}
+h2 span{font-size: 1.1em; font-weight: 300; display: inline-block; margin-left: 16px;}
+h3{font-size: 1.5em; color: #373844; opacity: 0.54; margin-bottom: 20px; font-weight: 600;}
+
+section{margin-bottom: 40px;}
+
+/*카피라이터*/
+footer{background-color: #F6F6F6;}
+footer .copy{padding: 26px 42px;}
+footer h1{color: #78787B; font-weight: 600; margin-bottom: 6px;}
+footer .copy li{display: inline-block; color: #78787B;;}
+footer.adm{background-color: #FFFFFF; border-top:1px solid #F6F6F6; }
+footer.adm .copy{padding: 26px 42px;}
+footer.adm h1{color: #C9C9C9; font-weight: 600; margin-bottom: 6px;}
+footer.adm .copy li{display: inline-block; color: #C9C9C9;;}
+footer.adm p{ color: #C9C9C9;;}
+
+
+@media screen and (max-width:950px) {
+  .page-wrapper.toggled header{padding-left: 70px;}
+  .page-wrapper.toggled .page-content,
+  .page-wrapper.toggled footer{padding-left: 0px;}
+}
+
+@media screen and (max-width:750px) {
+  .tnb{display: flex; align-items: center; padding-top:16px; padding-bottom:16px;}
+  .tnb a{width: 100%; text-align: center;}
+  .tnb a img{margin-right: 0; transform: scale(1.4);}
+  .tnb a span{display: block; margin-top: 10px; font-size: 0.9em; line-height: 1.2em;}
+  .page-wrapper .page-content > div{padding: 50px 20px;}
+  footer .copy{padding:20px;}
+}
+
+@media screen and (max-width:550px) {
+  .tnb{padding:26px;}
+  .tnb a span{display: none;}
+  h2 strong{display: block;}
+  h2 span{margin-left: 0; margin-top: 10px;}
+}
