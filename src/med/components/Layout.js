@@ -5,7 +5,7 @@
 import Header from "./Header";
 import Footer from "./Footer";
 
-function Layout(props) {
+const Layout = (props) => {
     return (
         <>
             <div className="page-wrapper chiller-theme toggled">

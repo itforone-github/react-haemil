@@ -1,5 +1,5 @@
 /*푸터*/
-function Footer() {
+const Footer = () => {
     return (
         <footer className="adm">
             <div className="copy">

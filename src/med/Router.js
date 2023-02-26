@@ -7,7 +7,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Main from "./Main";
 import Login from "./Login";
 
-function Router() {
+const Router = () => {
     return (
         <BrowserRouter>
             <Routes>

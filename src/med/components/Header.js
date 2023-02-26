@@ -2,7 +2,7 @@
 import Sidebar from "./Sidebar"
 import { Link } from "react-router-dom";
 
-function Header() {
+const Header = () => {
     return (
         <>
             <header>

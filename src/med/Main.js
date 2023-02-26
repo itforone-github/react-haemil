@@ -2,13 +2,13 @@
 import Layout from "./components/Layout";
 import {Link} from "react-router-dom";
 
-function Main() {
+const Main = () => {
     return (
         <>
             <Layout id="Main">
                 <section className="treat main">
                     <div className="tm_register">
-                        <h3>간편 환자등록(자동배포테스트)</h3>
+                        <h3>간편 환자등록</h3>
                         <div className="box1">
                             <div className="form">
                                 <label>이름</label><input type="text" placeholder="이름"/>

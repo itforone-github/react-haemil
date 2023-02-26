@@ -1,7 +1,7 @@
 /*사이드바*/
 import {Link} from "react-router-dom";
 
-function Sidebar() {
+const Sidebar = () => {
     return (
         <>
             <a id="show-sidebar" className="btn btn-sm btn-dark" href="med/components/Sidebar#">
