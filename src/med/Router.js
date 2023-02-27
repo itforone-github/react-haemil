@@ -11,8 +11,11 @@ const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Main/>}></Route> {/*메인*/}
-                <Route path="./Med/Login" element={<Login/>}></Route> {/*로그인*/}
+                <Route path="/" element={<Login/>}></Route> {/**/}
+                <Route path="Main" element={<Main/>}></Route> {/*메인*/}
+                <Route path="Login" element={<Login/>}></Route> {/*로그인*/}
+                <Route path="SignUp" element={<Login/>}></Route> {/*회원가입*/}
+                <Route path="FindPw" element={<Login/>}></Route> {/*아이디/비밀번호 찾기*/}
             </Routes>
         </BrowserRouter>
     );

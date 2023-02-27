@@ -10,7 +10,7 @@ const Login = () => {
         event.preventDefault();
         console.log("Username: ", username);
         console.log("Password: ", password);
-        alert("Username/Password: "+username+"/"+password);
+        // alert("Username/Password: "+username+"/"+password);
     };
     return (
         <div className="wrap_bg">
@@ -23,12 +23,13 @@ const Login = () => {
                             <div className="form_wrap">
                                 <input type="text" placeholder="아이디" onChange={(event) => setUsername(event.target.value)}/>
                                 <input type="password" placeholder="비밀번호" onChange={(event) => setPassword(event.target.value)}/>
-                                <Link onClick={handleSubmit} className="btn btn_sdw btn_large btn_red">로그인</Link>
+                                {/*<Link onClick={handleSubmit} className="btn btn_sdw btn_large btn_red">로그인</Link>*/}
+                                <Link to="Main" className="btn btn_sdw btn_large btn_red">로그인</Link> {/*TODO: 기능 구현 후 수정*/}
                             </div>
 
                             <div className="btn_wrap">
-                                <Link to="./FindPw" className="btn btn_sdw btn_white2">아이디 비밀번호 찾기</Link>
-                                <Link to="./SignUp" className="btn btn_sdw btn_black">회원 가입</Link>
+                                <Link to="FindPw" className="btn btn_sdw btn_white2">아이디 비밀번호 찾기</Link>
+                                <Link to="SignUp" className="btn btn_sdw btn_black">회원 가입</Link>
                             </div>
 
                         </form>
