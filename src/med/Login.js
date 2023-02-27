@@ -24,7 +24,7 @@ const Login = () => {
                                 <input type="text" placeholder="아이디" onChange={(event) => setUsername(event.target.value)}/>
                                 <input type="password" placeholder="비밀번호" onChange={(event) => setPassword(event.target.value)}/>
                                 {/*<Link onClick={handleSubmit} className="btn btn_sdw btn_large btn_red">로그인</Link>*/}
-                                <Link to="Main" className="btn btn_sdw btn_large btn_red">로그인</Link> {/*임시: 기능 구현 후 수정*/}
+                                <Link to="Main" className="btn btn_sdw btn_large btn_red">로그인</Link> {/*TODO: 기능 구현 후 수정*/}
                             </div>
 
                             <div className="btn_wrap">
