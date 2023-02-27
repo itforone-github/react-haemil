@@ -58,7 +58,7 @@ const SignUp = () => {
                                 </div>
                             </div>
                             <div className="btn_wrap">
-                                <Link to="signUpReq" className="btn btn_small2 btn_sdw btn_red">회원가입요청</Link>
+                                <Link to="/signUpReq" className="btn btn_small2 btn_sdw btn_red">회원가입요청</Link>
                                 <Link to="/" className="btn btn_small2 btn_sdw btn_gray">취소하기</Link>
                             </div>
                         </div>
