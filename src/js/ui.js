@@ -1,4 +1,4 @@
-
+/*eslint-disable*/
 $(document).ready(function(){
   /*/체크박스디자인 div추가
   $('input[type=checkbox] + label').prepend('<div></div>');
@@ -14,7 +14,7 @@ $(document).ready(function(){
       $(".lnb > div").slideUp(200);
       $($(this).attr("href")).slideDown(200);
       return false;
-      })
+    })
   })
 
   $(".sidebar-dropdown > a").click(function() {
@@ -46,11 +46,11 @@ $(document).ready(function(){
     $(".page-wrapper").addClass("toggled");
   });
 
-  //사이드바 
+  //사이드바
   var w = $(window).width();
-	if(w < 950){
-      $(".page-wrapper").removeClass("toggled");
-	}
+  if(w < 950){
+    $(".page-wrapper").removeClass("toggled");
+  }
   //이미지 업로드
   function readURL(input) {
     if (input.files && input.files[0]) {
@@ -66,8 +66,44 @@ $(document).ready(function(){
   $("#imageUpload").change(function() {
     readURL(this);
   });
+  //닫기
+  $('button.slideup1').click( function() {
+    $('div.slideform1').slideToggle();
+    if( $(this).html() == '닫기' ) {
+      $(this).html('열기');
+    }
+    else {
+      $(this).html('닫기');
+    }
+  } );
+  $('button.slideup2').click( function() {
+    $('div.slideform2').slideToggle();
+    if( $(this).html() == '닫기' ) {
+      $(this).html('열기');
+    }
+    else {
+      $(this).html('닫기');
+    }
+  } );
+  $('button.slideup3').click( function() {
+    $('div.slideform3').slideToggle();
+    if( $(this).html() == '닫기' ) {
+      $(this).html('열기');
+    }
+    else {
+      $(this).html('닫기');
+    }
+  } );
+  //탭메뉴
+
+  $('ul.tabs li').click(function(){
+    var tab_id = $(this).attr('data-tab');
+
+    $('ul.tabs li').removeClass('current');
+    $('.tab-content').removeClass('current');
+
+    $(this).addClass('current');
+    $("#"+tab_id).addClass('current');
+  })
 
 });
-
-
-

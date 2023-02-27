@@ -1,7 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Router from 'med/Router';
-import reportWebVitals from 'reportWebVitals';
+
+// js
+import "js/jquery-1.9.1.min.js";
+import "js/bootstrap.min.js";
+import "js/ui.js";
+
+// css
 import "css/bootstrap.min.css";
 import "css/all.min.css";
 import "css/sideber.css"
@@ -15,5 +21,3 @@ root.render(
         <Router />
     </React.StrictMode>
 );
-
-reportWebVitals();
