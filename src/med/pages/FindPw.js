@@ -1,14 +1,14 @@
 /*아이디/비밀번호 찾기*/
 import {Link} from "react-router-dom";
-import * as swal from "js/sweetalert2.all.min.js";
+import Swal from "sweetalert2";
 
 const FindPw = () => {
     function message() {
-        swal.fire({
-            html:'회원님의 정보와 일치하는 아이디는<br> <strong>○○○○</strong>입니다.',
-            confirmButtonText : '확인'
+        Swal.fire({
+            html: '회원님의 정보와 일치하는 아이디는<br> <strong>○○○○</strong>입니다.',
+            confirmButtonText: '확인'
         });
-    };
+    }
 
     return (
         <div className="wrap_bg">
