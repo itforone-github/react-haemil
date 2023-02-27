@@ -1,5 +1,5 @@
 /*메인*/
-import Layout from "./components/Layout";
+import Layout from "med/components/Layout";
 import {Link} from "react-router-dom";
 
 const Main = () => {
