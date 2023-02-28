@@ -1,4 +1,7 @@
-/*회원가입*/
+/**
+ * 1.2 회원가입
+ * TODO:기능작업필요
+ */
 import {Link} from "react-router-dom";
 
 const SignUp = () => {

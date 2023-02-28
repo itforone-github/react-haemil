@@ -1,4 +1,6 @@
-/*메인*/
+/**
+ * 2.1 환자메인
+ */
 import Layout from "med/components/Layout";
 import {Link} from "react-router-dom";
 
