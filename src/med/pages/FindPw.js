@@ -1,4 +1,7 @@
-/*아이디/비밀번호 찾기*/
+/**
+ * 1.3 아이디/비밀번호 찾기
+ * TODO:기능작업필요
+ */
 import {Link} from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -22,8 +25,8 @@ const FindPw = () => {
 
                                     {/*Nav tabs*/}
                                     <ul className="nav nav-tabs" role="tablist">
-                                        <li role="presentation" className="active"><a href="#find_id" aria-controls="find_id" role="tab" data-toggle="tab">ID찾기</a></li>
-                                        <li role="presentation"><a href="#find_pw" aria-controls="find_pw" role="tab" data-toggle="tab">비밀번호 찾기</a></li>
+                                        <li role="presentation" className="active"><a href={"#find_id}"} aria-controls="find_id" role="tab" data-toggle="tab">ID찾기</a></li>
+                                        <li role="presentation"><a href={"#find_pw"} aria-controls="find_pw" role="tab" data-toggle="tab">비밀번호 찾기</a></li>
                                     </ul>
 
                                     {/*Tab panes*/}
@@ -43,7 +46,7 @@ const FindPw = () => {
                                             <input type="text" placeholder="사업자등록번호"/>
 
                                             <div className="btn_wrap">
-                                                <Link to="/findPwReq" className="btn btn_large btn_sdw btn_red">비밀번호 재설정</Link>
+                                                <Link to="/pwReset" className="btn btn_large btn_sdw btn_red">비밀번호 재설정</Link>
                                             </div>
                                         </div>
                                     </div>
