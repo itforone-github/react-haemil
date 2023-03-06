@@ -7,7 +7,6 @@ $(document).ready(function () {
 
     //사이드바
     $(function () {
-        alert(1);
         $(".lnb > div:not(" + $(".side-icon > a.active").attr("href") + ")").hide();
         $(".side-icon > a").click(function () {
             $(".side-icon > a").removeClass("active");
