@@ -1,7 +1,9 @@
 /*사이드바*/
-import Link from "next/link";
+import {useRouter} from "next/router";
 
 const Sidebar = () => {
+    const router = useRouter();
+
     return (
         <>
             <a id="show-sidebar" className="btn btn-sm btn-dark" href="#">
@@ -26,30 +28,22 @@ const Sidebar = () => {
 
                     <div className="sidebar-menu">
                         <div className="side-icon">
-                            <Link href={"/main"}>
-                                <a className="active">
-                                    <img alt="환자진료" src="/img/common/sidebar_icon01.svg"/>
-                                    <p>환자진료</p>
-                                </a>
-                            </Link>
-                            <Link href={"/"}>
-                                <a>
-                                    <img alt="처방하기" src="/img/common/sidebar_icon02.svg"/>
-                                    <p>처방하기</p>
-                                </a>
-                            </Link>
-                            <Link href={"/"}>
-                                <a>
-                                    <img alt="한의학몰" src="/img/common/sidebar_icon03.svg"/>
-                                    <p>한의학몰</p>
-                                </a>
-                            </Link>
-                            <Link href={"/"}>
-                                <a>
-                                    <img alt="기본설정" src="/img/common/sidebar_icon04.svg"/>
-                                    <p>기본설정</p>
-                                </a>
-                            </Link>
+                            <a className="active" onClick={() => router.push("/main")}>
+                                <img alt="환자진료" src="/img/common/sidebar_icon01.svg"/>
+                                <p>환자진료</p>
+                            </a>
+                            <a>
+                                <img alt="처방하기" src="/img/common/sidebar_icon02.svg"/>
+                                <p>처방하기</p>
+                            </a>
+                            <a>
+                                <img alt="한의학몰" src="/img/common/sidebar_icon03.svg"/>
+                                <p>한의학몰</p>
+                            </a>
+                            <a>
+                                <img alt="기본설정" src="/img/common/sidebar_icon04.svg"/>
+                                <p>기본설정</p>
+                            </a>
                         </div>
 
                         <div className="lnb">
@@ -59,39 +53,29 @@ const Sidebar = () => {
                                         <span>진료실</span>
                                     </li>
                                     <li className="sidebar-dropdown">
-                                        <Link href={"/treatPatient"}>
-                                            <a>
-                                                <img alt="" src="/img/common/sidemenu01_01.svg"/>
-                                                <span>환자 관리</span>
-                                            </a>
-                                        </Link>
+                                        <a onClick={() => router.push("/treatPatient")}>
+                                            <img alt="" src="/img/common/sidemenu01_01.svg"/>
+                                            <span>환자 관리</span>
+                                        </a>
                                     </li>
                                     <li className="sidebar-dropdown">
-                                        <Link href={"/"}>
-                                            <a>
-                                                <img alt="" src="/img/common/sidemenu01_02.svg"/>
-                                                <span>예약·진료 관리</span>
-                                                {/*<span className="badge badge-pill badge-danger">3</span>*/}
-                                            </a>
-                                        </Link>
+                                        <a>
+                                            <img alt="" src="/img/common/sidemenu01_02.svg"/>
+                                            <span>예약·진료 관리</span>
+                                            {/*<span className="badge badge-pill badge-danger">3</span>*/}
+                                        </a>
                                         <div className="sidebar-submenu">
                                             <ul>
                                                 <li>
-                                                    <Link href={"/"}>
-                                                        <a>실시간 진료 관리
-                                                            {/*<span className="badge badge-pill badge-success">on</span>*/}
-                                                        </a>
-                                                    </Link>
+                                                    <a>실시간 진료 관리
+                                                        {/*<span className="badge badge-pill badge-success">on</span>*/}
+                                                    </a>
                                                 </li>
                                                 <li>
-                                                    <Link href={"/"}>
-                                                        <a href="med/components/Sidebar#">예약관리</a>
-                                                    </Link>
+                                                    <a href="med/components/Sidebar#">예약관리</a>
                                                 </li>
                                                 <li>
-                                                    <Link href={"/"}>
-                                                        <a>최근 진료 내역</a>
-                                                    </Link>
+                                                    <a>최근 진료 내역</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -103,12 +87,10 @@ const Sidebar = () => {
                                         </a>
                                     </li>*/}
                                     <li className="sidebar-dropdown">
-                                        <Link href={"/"}>
-                                            <a>
-                                                <img alt="" src="/img/common/sidemenu01_04.svg"/>
-                                                <span>진료 리뷰 관리</span>
-                                            </a>
-                                        </Link>
+                                        <a>
+                                            <img alt="" src="/img/common/sidemenu01_04.svg"/>
+                                            <span>진료 리뷰 관리</span>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
