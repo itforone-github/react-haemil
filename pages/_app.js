@@ -6,13 +6,13 @@
 import PropTypes from "prop-types";
 import {useEffect} from "react";
 // css
-import "styles/bootstrap.min.css";
-import "styles/all.min.css";
-import "styles/sideber.css";
-import "styles/common.css";
-import "styles/member.css";
-import "styles/layout.css";
-import "styles/med.css";
+import "/styles/bootstrap.min.css";
+import "/styles/all.min.css";
+import "/styles/sideber.css";
+import "/styles/common.css";
+import "/styles/member.css";
+import "/styles/layout.css";
+import "/styles/med.css";
 import Script from "next/script";
 
 const HamilApp = ({Component, pageProps}) => {
