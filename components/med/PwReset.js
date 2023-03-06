@@ -2,9 +2,11 @@
  * 1.3.1 비밀번호 재설정
  * TODO:기능작업필요
  */
-import Link from "next/link";
+import {useRouter} from "next/router";
 
 const PwReset = () => {
+    const router = useRouter();
+
     return (
         <div className="wrap_bg">
             <div className="mb_wrap">
@@ -16,7 +18,7 @@ const PwReset = () => {
                                 <input type="text" placeholder="비밀번호 재설정"/>
                                 <input type="text" placeholder="비밀번호 재설정 확인"/>
                                 <div className="btn_wrap">
-                                    <Link href={"/"}><a className="btn btn_large btn_sdw btn_red">비밀번호 재설정</a></Link>
+                                    <a className="btn btn_large btn_sdw btn_red" onClick={() => router.push("/")}>비밀번호 재설정</a>
                                 </div>
                             </div>
                         </div>

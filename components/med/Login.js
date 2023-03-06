@@ -2,10 +2,11 @@
  * 1.1 로그인
  * TODO:기능작업필요
  */
-import Link from "next/link";
 import {useState} from "react";
+import {useRouter} from "next/router";
 
 const Login = () => {
+    const router = useRouter();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const handleSubmit = (event) => {
@@ -14,6 +15,7 @@ const Login = () => {
         console.log("Password: ", password);
         alert("Username/Password: "+username+"/"+password);
     };
+
     return (
         <div className="wrap_bg">
             <div className="mb_wrap">
@@ -26,12 +28,12 @@ const Login = () => {
                                 <input type="text" placeholder="아이디" onChange={(event) => setUsername(event.target.value)}/>
                                 <input type="password" placeholder="비밀번호" onChange={(event) => setPassword(event.target.value)}/>
                                 {/*<a className="btn btn_sdw btn_large btn_red" onClick={handleSubmit}>로그인</a>*/}
-                                <Link href={"/main"}><a className="btn btn_sdw btn_large btn_red">로그인</a></Link> {/*TODO: 기능 구현 후 수정*/}
+                                <a className="btn btn_sdw btn_large btn_red" onClick={() => router.push("/main")}>로그인</a> {/*TODO: 기능 구현 후 수정*/}
                             </div>
 
                             <div className="btn_wrap">
-                                <Link href={"/findPw"}><a className="btn btn_sdw btn_white2">아이디 비밀번호 찾기</a></Link>
-                                <Link href={"/signUp"}><a className="btn btn_sdw btn_black">회원 가입</a></Link>
+                                <a className="btn btn_sdw btn_white2" onClick={() => router.push("/findPw")}>아이디 비밀번호 찾기</a>
+                                <a className="btn btn_sdw btn_black" onClick={() => router.push("/signUp")}>회원 가입</a>
                             </div>
 
                         </form>

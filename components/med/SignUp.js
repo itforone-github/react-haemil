@@ -2,9 +2,11 @@
  * 1.2 회원가입
  * TODO:기능작업필요
  */
-import Link from "next/link";
+import {useRouter} from "next/router";
 
 const SignUp = () => {
+    const router = useRouter();
+
     return (
         <div className="wrap_bg">
             <div className="mb_wrap">
@@ -61,8 +63,8 @@ const SignUp = () => {
                                 </div>
                             </div>
                             <div className="btn_wrap">
-                                <Link href={"/"}><a className="btn btn_small2 btn_sdw btn_red">회원가입요청</a></Link>
-                                <Link href={"/"}><a className="btn btn_small2 btn_sdw btn_gray">취소하기</a></Link>
+                                <a className="btn btn_small2 btn_sdw btn_red" onClick={() => router.push("/")}>회원가입요청</a>
+                                <a className="btn btn_small2 btn_sdw btn_gray" onClick={() => router.push("/")}>취소하기</a>
                             </div>
                         </div>
                     </form>

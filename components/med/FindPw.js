@@ -2,10 +2,12 @@
  * 1.3 아이디/비밀번호 찾기
  * TODO:기능작업필요
  */
-import Link from "next/link";
 import Swal from "sweetalert2";
+import {useRouter} from "next/router";
 
 const FindPw = () => {
+    const router = useRouter();
+
     function message() {
         Swal.fire({
             html: '회원님의 정보와 일치하는 아이디는<br> <strong>○○○○</strong>입니다.',
@@ -46,7 +48,7 @@ const FindPw = () => {
                                             <input type="text" placeholder="사업자등록번호"/>
 
                                             <div className="btn_wrap">
-                                                <Link href={"/pwReset"}><a className="btn btn_large btn_sdw btn_red">비밀번호 재설정</a></Link>
+                                                <a className="btn btn_large btn_sdw btn_red" onClick={() => router.push("/pwReset")}>비밀번호 재설정</a>
                                             </div>
                                         </div>
                                     </div>

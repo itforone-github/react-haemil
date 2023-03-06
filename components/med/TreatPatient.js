@@ -4,10 +4,11 @@
  */
 import {useEffect} from "react";
 import Layout from "./layout/Layout";
-import Link from "next/link";
-import $ from "jquery";
+import {useRouter} from "next/router";
 
 const TreatPatient = () => {
+    const router = useRouter();
+
     useEffect(() => {
         $(function () {
             $(".past_list").css("display", "none");
@@ -86,11 +87,11 @@ const TreatPatient = () => {
                             <dl>
                                 <dt>체질선택</dt>
                                 <dd className="circle">
-                                    <input type="radio" id="type4" name="type" checked/><label for="type4">없음</label>
-                                    <input type="radio" id="type1" name="type"/><label for="type1">태양인</label>
-                                    <input type="radio" id="type2" name="type"/><label for="type2">태음인</label>
-                                    <input type="radio" id="type3" name="type"/><label for="type3">소양인</label>
-                                    <input type="radio" id="type4" name="type"/><label for="type4">소음인</label>
+                                    <input type="radio" id="type4" name="type" checked/><label htmlFor="type4">없음</label>
+                                    <input type="radio" id="type1" name="type"/><label htmlFor="type1">태양인</label>
+                                    <input type="radio" id="type2" name="type"/><label htmlFor="type2">태음인</label>
+                                    <input type="radio" id="type3" name="type"/><label htmlFor="type3">소양인</label>
+                                    <input type="radio" id="type4" name="type"/><label htmlFor="type4">소음인</label>
                                 </dd>
                             </dl>
                             <textarea placeholder="처방메모를 입력하세요. (탕전실에는 전달되지 않습니다.)"></textarea>
@@ -179,9 +180,7 @@ const TreatPatient = () => {
                                                 <td className="" rowSpan="1"><span className="state">주문접수</span></td>
                                                 <td className="" colSpan="1">
                                                     <span className="txt_blue txt_under">
-                                                        <Link href={"/pxPrescribe1View"}>
-                                                            <a>202302081123-1</a>
-                                                        </Link>
+                                                        <a onClick={() => router.push("/pxPrescribe1View")}>202302081123-1</a>
                                                     </span>
                                                 </td>
                                                 <td scope="col" rowSpan="2" className="">1</td>
@@ -210,9 +209,7 @@ const TreatPatient = () => {
                                                 </td>
                                                 <td className="" colSpan="1">
                                                     <span className="txt_blue txt_under">
-                                                        <Link href={"/pxPrescribe1View"}>
-                                                            <a>202302081123-1</a>
-                                                        </Link>
+                                                        <a onClick={() => router.push("/pxPrescribe1View")}>202302081123-1</a>
                                                     </span>
                                                 </td>
                                                 <td scope="col" rowSpan="2" className="">1</td>
