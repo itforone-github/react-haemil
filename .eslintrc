@@ -1,0 +1,33 @@
+{
+  "parserOptions": { // 버전/소스타입
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": { // 환경
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": [ // 기본규칙
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": [ // 플러그인
+    "import",
+    "react-hooks",
+    "babel-plugin-styled-components",
+    {
+      "fileName": true,
+      "displayName": true,
+      "pure": true,
+      "ssr": true
+    }
+  ],
+  "rules": { // 규칙
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/anchor-is-valid": "off"
+  }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.187" height="16.187" viewBox="0 0 16.187 16.187">
+  <g id="그룹_3" data-name="그룹 3" transform="translate(0.094 0.094)">
+    <path id="패스_1" data-name="패스 1" d="M15.687,8.344A7.344,7.344,0,1,1,8.344,1a7.344,7.344,0,0,1,7.344,7.344" transform="translate(-0.344 -0.344)" fill="none" stroke="#c8c8cb" stroke-width="1.5"/>
+    <path id="패스_2" data-name="패스 2" d="M8.732,13.688h2.994a1.542,1.542,0,0,0,0-3.085H10.274a1.542,1.542,0,1,1,0-3.084h2.994" transform="translate(-3 -2.583)" fill="none" stroke="#c8c8cb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="선_4" data-name="선 4" y2="8.431" transform="translate(8 3.784)" fill="none" stroke="#c8c8cb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  </g>
+</svg>
