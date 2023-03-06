@@ -26,7 +26,7 @@ const Sidebar = () => {
 
                     <div className="sidebar-menu">
                         <div className="side-icon">
-                            <Link href={"/"}>
+                            <Link href={"/main"}>
                                 <a className="active">
                                     <img alt="환자진료" src="/img/common/sidebar_icon01.svg"/>
                                     <p>환자진료</p>
