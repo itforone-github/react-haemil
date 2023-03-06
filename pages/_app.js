@@ -28,7 +28,7 @@ const HamilApp = ({Component, pageProps}) => {
             document.body.removeChild(script1);
             document.body.removeChild(script2);
         }
-    });
+    }, []);
 
     return (
         <>
