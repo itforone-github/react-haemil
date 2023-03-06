@@ -1,8 +1,8 @@
 /**
  * 2.1 환자메인
  */
-import Layout from "med/components/Layout";
-import {Link} from "react-router-dom";
+import Layout from "./layout/Layout";
+import Link from "next/link";
 
 const Main = () => {
     return (
@@ -18,7 +18,7 @@ const Main = () => {
                                 <label>연락처</label><input type="text" placeholder="연락처"/>
                                 <label>주소</label><input type="text" placeholder="주소"/>
                             </div>
-                            <Link className="btn btn_middle btn_red">등록</Link>
+                            <Link href={"/"}><a className="btn btn_middle btn_red">등록</a></Link>
                         </div>
                     </div>
                     <div className="tm_real_time">
@@ -27,9 +27,9 @@ const Main = () => {
                                 <strong>실시간 진료 명단</strong>
                                 <div className="title_btn">
                                     <span>7명</span>
-                                    <Link className="arrow on"><img alt="" src="/img/common/arrow_left.svg"/></Link>
-                                    <Link className="arrow off"><img alt="" src="/img/common/arrow_right.svg"/></Link>
-                                    <Link className="btn btn_small btn_white">직접접수</Link>
+                                    <Link href={"/"}><a className="arrow on"><img alt="" src="/img/common/arrow_left.svg"/></a></Link>
+                                    <Link href={"/"}><a className="arrow off"><img alt="" src="/img/common/arrow_right.svg"/></a></Link>
+                                    <Link href={"/"}><a className="btn btn_small btn_white">직접접수</a></Link>
                                 </div>
                             </div>
                             <div className="list">
@@ -39,35 +39,35 @@ const Main = () => {
                                         <p>
                                             <span className="state ing">진료중</span>
                                             {/*진료중일 때 class : ing, 대기중일 때 class : standby*/}
-                                            <Link className="btn btn_mini btn_line">완료</Link>
+                                            <Link href={"/"}><a className="btn btn_mini btn_line">완료</a></Link>
                                         </p>
                                     </li>
                                     <li>
                                         <strong className="patient_name">이환자</strong>
                                         <p>
                                             <span className="state standby">대기중</span>
-                                            <Link className="btn btn_mini btn_line">호출</Link>
+                                            <Link href={"/"}><a className="btn btn_mini btn_line">호출</a></Link>
                                         </p>
                                     </li>
                                     <li>
                                         <strong className="patient_name">박환자</strong>
                                         <p>
                                             <span className="state standby">대기중</span>
-                                            <Link className="btn btn_mini btn_line">호출</Link>
+                                            <Link href={"/"}><a className="btn btn_mini btn_line">호출</a></Link>
                                         </p>
                                     </li>
                                     <li>
                                         <strong className="patient_name">정환자</strong>
                                         <p>
                                             <span className="state standby">대기중</span>
-                                            <Link className="btn btn_mini btn_line">호출</Link>
+                                            <Link href={"/"}><a className="btn btn_mini btn_line">호출</a></Link>
                                         </p>
                                     </li>
                                     <li>
                                         <strong className="patient_name">강환자</strong>
                                         <p>
                                             <span className="state standby">대기중</span>
-                                            <Link className="btn btn_mini btn_line">호출</Link>
+                                            <Link href={"/"}><a className="btn btn_mini btn_line">호출</a></Link>
                                         </p>
                                     </li>
                                 </ul>
@@ -80,9 +80,9 @@ const Main = () => {
                                 <strong>금일 진료 예약건</strong>
                                 <div className="title_btn">
                                     <span>7명</span>
-                                    <Link className="arrow on"><img alt="" src="/img/common/arrow_left.svg"/></Link>
-                                    <Link className="arrow off"><img alt="" src="/img/common/arrow_right.svg"/></Link>
-                                    <Link className="btn btn_small btn_white">직접접수</Link>
+                                    <Link href={"/"}><a className="arrow on"><img alt="" src="/img/common/arrow_left.svg"/></a></Link>
+                                    <Link href={"/"}><a className="arrow off"><img alt="" src="/img/common/arrow_right.svg"/></a></Link>
+                                    <Link href={"/"}><a className="btn btn_small btn_white">직접접수</a></Link>
                                 </div>
                             </div>
                             <div className="list">
@@ -144,35 +144,35 @@ const Main = () => {
                                     <p>김환자</p>
                                     <p>
                                         <span className="date_time">2022-11-02 11:00</span>
-                                        <Link className="btn btn_mini btn_line">확인</Link>
+                                        <Link href={"/"}><a className="btn btn_mini btn_line">확인</a></Link>
                                     </p>
                                 </li>
                                 <li>
                                     <p>김환자</p>
                                     <p>
                                         <span className="date_time">2022-11-02 11:00</span>
-                                        <Link className="btn btn_mini btn_line">확인</Link>
+                                        <Link href={"/"}><a className="btn btn_mini btn_line">확인</a></Link>
                                     </p>
                                 </li>
                                 <li>
                                     <p>김환자</p>
                                     <p>
                                         <span className="date_time">2022-11-02 11:00</span>
-                                        <Link className="btn btn_mini btn_line">확인</Link>
+                                        <Link href={"/"}><a className="btn btn_mini btn_line">확인</a></Link>
                                     </p>
                                 </li>
                                 <li>
                                     <p>김환자</p>
                                     <p>
                                         <span className="date_time">2022-11-02 11:00</span>
-                                        <Link className="btn btn_mini btn_line">확인</Link>
+                                        <Link href={"/"}><a className="btn btn_mini btn_line">확인</a></Link>
                                     </p>
                                 </li>
                                 <li>
                                     <p>김환자</p>
                                     <p>
                                         <span className="date_time">2022-11-02 11:00</span>
-                                        <Link className="btn btn_mini btn_line">확인</Link>
+                                        <Link href={"/"}><a className="btn btn_mini btn_line">확인</a></Link>
                                     </p>
                                 </li>
                             </ul>

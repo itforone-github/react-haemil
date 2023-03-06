@@ -1,0 +1,26 @@
+{
+  // eslint 설정
+  "parserOptions": { // 버전/소스타입
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": { // 환경
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": [ // 기본규칙
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": [ // 플러그인
+    "import",
+    "react-hooks"
+  ],
+  "rules": { // 규칙
+
+  }
+}
