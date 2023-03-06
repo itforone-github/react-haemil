@@ -2,18 +2,17 @@
  * 1.1 로그인
  * TODO:기능작업필요
  */
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import Link from "next/link";
+import {useState} from "react";
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log("Username: ", username);
         console.log("Password: ", password);
-        // alert("Username/Password: "+username+"/"+password);
+        alert("Username/Password: "+username+"/"+password);
     };
     return (
         <div className="wrap_bg">
@@ -26,13 +25,13 @@ const Login = () => {
                             <div className="form_wrap">
                                 <input type="text" placeholder="아이디" onChange={(event) => setUsername(event.target.value)}/>
                                 <input type="password" placeholder="비밀번호" onChange={(event) => setPassword(event.target.value)}/>
-                                {/*<Link onClick={handleSubmit} className="btn btn_sdw btn_large btn_red">로그인</Link>*/}
-                                <Link to="/main" className="btn btn_sdw btn_large btn_red">로그인</Link> {/*TODO: 기능 구현 후 수정*/}
+                                {/*<a className="btn btn_sdw btn_large btn_red" onClick={handleSubmit}>로그인</a>*/}
+                                <Link href={"/main"}><a className="btn btn_sdw btn_large btn_red">로그인</a></Link> {/*TODO: 기능 구현 후 수정*/}
                             </div>
 
                             <div className="btn_wrap">
-                                <Link to="/findPw" className="btn btn_sdw btn_white2">아이디 비밀번호 찾기</Link>
-                                <Link to="/signUp" className="btn btn_sdw btn_black">회원 가입</Link>
+                                <Link href={"/findPw"}><a className="btn btn_sdw btn_white2">아이디 비밀번호 찾기</a></Link>
+                                <Link href={"/signUp"}><a className="btn btn_sdw btn_black">회원 가입</a></Link>
                             </div>
 
                         </form>

@@ -2,7 +2,7 @@
  * 1.3.1 비밀번호 재설정
  * TODO:기능작업필요
  */
-import {Link} from "react-router-dom";
+import Link from "next/link";
 
 const PwReset = () => {
     return (
@@ -16,7 +16,7 @@ const PwReset = () => {
                                 <input type="text" placeholder="비밀번호 재설정"/>
                                 <input type="text" placeholder="비밀번호 재설정 확인"/>
                                 <div className="btn_wrap">
-                                    <Link to="/" className="btn btn_large btn_sdw btn_red">비밀번호 재설정</Link>
+                                    <Link href={"/"}><a className="btn btn_large btn_sdw btn_red">비밀번호 재설정</a></Link>
                                 </div>
                             </div>
                         </div>

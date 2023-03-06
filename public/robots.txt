@@ -1,4 +1,0 @@
-# SEO 관리를 위한 파일, 검색엔진 크롤러들의 엑세스 설정 할 수 있음
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Disallow:

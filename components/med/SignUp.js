@@ -2,7 +2,7 @@
  * 1.2 회원가입
  * TODO:기능작업필요
  */
-import {Link} from "react-router-dom";
+import Link from "next/link";
 
 const SignUp = () => {
     return (
@@ -61,8 +61,8 @@ const SignUp = () => {
                                 </div>
                             </div>
                             <div className="btn_wrap">
-                                <Link to="/signUpReq" className="btn btn_small2 btn_sdw btn_red">회원가입요청</Link>
-                                <Link to="/" className="btn btn_small2 btn_sdw btn_gray">취소하기</Link>
+                                <Link href={"/"}><a className="btn btn_small2 btn_sdw btn_red">회원가입요청</a></Link>
+                                <Link href={"/"}><a className="btn btn_small2 btn_sdw btn_gray">취소하기</a></Link>
                             </div>
                         </div>
                     </form>
