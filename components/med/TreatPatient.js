@@ -30,7 +30,7 @@ const TreatPatient = () => {
 
     return (
         <>
-        <Layout id={TreatPatient}>
+        <Layout id={"TreatPatient"} title={"환자 관리"} desc={"신규 환자 등록, 기존 환자 정보 수정이 가능합니다."}>
             <section className="t_patient">
                 <div className="register">
                     <div className="box2">

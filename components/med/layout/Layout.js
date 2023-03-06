@@ -1,9 +1,14 @@
-/*공통레이아웃*/
+/**
+ * 공통 레이아웃
+ * @children: 컴포넌트의 내용
+ * @title: 상단 타이틀
+ * @desc: 페이지 설명
+ */
 import Header from "./Header";
 import Footer from "./Footer";
 import PropTypes from "prop-types";
 
-const Layout = ({children}) => {
+const Layout = ({children, title, desc}) => {
     return (
         <div className="page-wrapper chiller-theme toggled">
             {/*header*/}
@@ -13,10 +18,9 @@ const Layout = ({children}) => {
             <main className="page-content">
                 <div className="container-fluid">
                     <h2>
-                        <strong>{/*hearder_name*/}</strong>
-                        <span>{/*상단페이지설명문*/}</span>
+                        <strong>{title}</strong>
+                        <span>{desc}</span>
                     </h2>
-                    {/*props.children: props로 전달받은 컴포넌트의 내용*/}
                     {children}
                 </div>
             </main>
@@ -28,7 +32,9 @@ const Layout = ({children}) => {
 };
 
 Layout.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired, //
+    title: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired
 };
 
 export default Layout;
