@@ -2,7 +2,6 @@
  * 3.2.4 탕전처방
  * TODO: 퍼블리싱 미완료
  */
-
 import Layout from "./layout/Layout";
 
 const PxPrescribe1View = () => {
