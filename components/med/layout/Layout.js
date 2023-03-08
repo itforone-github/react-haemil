@@ -1,8 +1,8 @@
 /**
  * 공통 레이아웃
- * @children: 컴포넌트의 내용
- * @title: 상단 타이틀
- * @desc: 페이지 설명
+ * @param children: 컴포넌트의 내용
+ * @param title: 상단 타이틀
+ * @param desc: 페이지 설명
  */
 import Header from "./Header";
 import Footer from "./Footer";

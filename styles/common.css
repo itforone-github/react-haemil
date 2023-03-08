@@ -966,41 +966,41 @@ textarea {
 
 /*alert디자인(swal2)*/
 .swal2-popup {
-    max-width: 300px;
-    width: calc(100% - 80px);
-    min-width: 280px;
-    font-size: 13px;
-    padding: 35px;
+    max-width: 300px !important;
+    width: calc(100% - 80px) !important;;
+    min-width: 280px !important;;
+    font-size: 13px !important;;
+    padding: 35px !important;;
 }
 
 .swal2-title {
-    font-size: 1.15em;
-    margin-bottom: 10px;
+    font-size: 1.15em !important;
+    margin-bottom: 10px !important;
 }
 
 .swal2-html-container {
-    font-size: 1em;
-    line-height: 1.4em;
-    margin: 0;
-    word-break: keep-all;
+    font-size: 1em !important;
+    line-height: 1.4em !important;
+    margin: 0 !important;
+    word-break: keep-all !important;
 }
 
 .swal2-actions {
-    width: 100%;
-    margin-top: 20px;
-    flex-wrap: nowrap;
-    flex-direction: row-reverse;
+    width: 100% !important;
+    margin-top: 20px !important;
+    flex-wrap: nowrap !important;
+    flex-direction: row-reverse !important;
 }
 
 .swal2-actions button {
-    width: 100%;
-    border-radius: 4px;
-    font-weight: 400;
-    line-height: 30px;
-    height: 30px;
-    padding: 0;
-    border: 0;
-    margin: 0 2px;
+    width: 100% !important;
+    border-radius: 4px !important;
+    font-weight: 400 !important;
+    line-height: 30px !important;
+    height: 30px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    margin: 0 2px !important;
 }
 
 .swal2-actions button:hover,
@@ -1010,24 +1010,24 @@ textarea {
 }
 
 .swal2-styled.swal2-confirm {
-    background: #BC2D1E;
-    color: #fff;
-    border-radius: 4px;
+    background: #BC2D1E !important;
+    color: #fff !important;
+    border-radius: 4px !important;
 }
 
 .swal2-styled.swal2-deny {
-    background: #C4C4C4;
-    color: #fff;
-    border-radius: 4px;
+    background: #C4C4C4 !important;
+    color: #fff !important;
+    border-radius: 4px !important;
 }
 
 .swal2-actions:not(.swal2-loading) .swal2-styled {
-    opacity: 0.9;
+    opacity: 0.9 !important;
 }
 
 .swal2-actions:not(.swal2-loading) .swal2-styled:hover {
-    background-image: none;
-    opacity: 1;
+    background-image: none !important;
+    opacity: 1 !important;
 }
 
 @media screen and (max-width: 550px) {

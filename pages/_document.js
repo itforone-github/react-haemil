@@ -5,7 +5,6 @@
  */
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import {ServerStyleSheet} from "styled-components";
-import Script from "next/script";
 
 class HamilDocument extends Document {
     // CSS 서버사이드렌더링을 위함
@@ -36,15 +35,20 @@ class HamilDocument extends Document {
     render() {
         return (
             <Html>
-                <Head/>
+                <Head>
+                    <script type="text/javascript" src={"/js/jquery-1.9.1.min.js"}/>
+                    <script type="text/javascript" src={"/js/bootstrap.min.js"}/>
+                    <script type="text/javascript" src={"/js/ui.js"}/>
+                    <script type="text/javascript" src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.KAKAO_JAVASCRIPT_KEY}&libraries=services`}/>
+                </Head>
                 <body>
                 <Main />
                 <NextScript />
-                <Script src="/utils/jquery-1.9.1.min.js" strategy={"beforeInteractive"}></Script>
-                <Script src="/utils/bootstrap.min.js" strategy={"afterInteractive"}></Script>
-                <Script src="/utils/ui.js" strategy={"afterInteractive"}></Script>
-                <Script src="/utils/wow.min.js" strategy={"afterInteractive"}></Script>
-                <Script src="/utils/swiper.min.js" strategy={"afterInteractive"}></Script>
+                {/*<Script src="/js/jquery-1.9.1.min.js" strategy={"beforeInteractive"}></Script>
+                <Script src="/js/bootstrap.min.js" strategy={"afterInteractive"}></Script>
+                <Script src="/js/ui.js" strategy={"afterInteractive"}></Script>
+                <Script src="/js/wow.min.js" strategy={"afterInteractive"}></Script>
+                <Script src="/js/swiper.min.js" strategy={"afterInteractive"}></Script>*/}
                 </body>
             </Html>
         )
