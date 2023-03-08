@@ -60,18 +60,12 @@ const SignUp = () => {
         else setBizRegFile(files);
         document.querySelector("#"+id+"Name").textContent = fileName;
     }
+
     // 계약서 파일 다운로드
     const handlerFileDownload = async () => {
-        await api.get('/api/download/contract', {
-            headers: {
-                'Content-Type': 'application/jso'
-            }
-        }).then((response) => {
-            console.log("success", response);
-            console.log(response.data); // return json data
-        }).catch((error) => {
-            console.log("error", error)
-        });
+        let element = document.createElement('a');
+        element.setAttribute('href',process.env.NEXT_PUBLIC_API_URL+'/api/download/contract');
+        element.click();
     }
 
     // 연락처 하이픈(-) 처리
@@ -99,6 +93,8 @@ const SignUp = () => {
         if(addr.length == 0) return errMsg("주소를 입력해 주세요.");
         if(tel.value.length == 0) return errMsg("대표전화를 입력해 주세요.");
         if(email.value.length > 0) if(!emailFormatChk(email.value)) return errMsg("이메일을 올바르게 입력해 주세요.");
+        if(bizRegFile.name == undefined) return errMsg("사업자등록증 파일을 등록해 주세요.");
+        if(contractFile.name == undefined) return errMsg("원외탕전실 계약서 파일을 등록해 주세요.");
 
         let formData = new FormData(document.forms[0]);
         // formData.append("memberId", memberId.value);
@@ -128,6 +124,7 @@ const SignUp = () => {
         }).then((response) => {
             console.log("success", response);
             console.log(response.data); // return json data
+            router.replace("/");
         }).catch((error) => {
             console.log("error", error)
         });
@@ -182,12 +179,12 @@ const SignUp = () => {
                                             <dl className="file_wrap">
                                                 <dt>사업자등록증(면허증)</dt>
                                                 <dd><a className="btn btn_black" onClick={() => handleClickFile("bizRegFile")}>파일첨부</a> <span id={"bizRegFileName"}>파일을 선택하세요..</span></dd>
-                                                <input type={"file"} id={"bizRegFile"} onChange={handleChangeFile} style={{display:"None"}}/>
+                                                <input type={"file"} id={"bizRegFile"} name={"bizRegFile"} onChange={handleChangeFile} style={{display:"None"}}/>
                                             </dl>
                                             <dl className="file_wrap">
                                                 <dt>원외탕전실 계약서</dt>
                                                 <dd><a className="btn btn_black" onClick={() => handleClickFile("contractFile")}>파일첨부</a> <span id={"contractFileName"}>파일을 선택하세요..</span></dd>
-                                                <input type={"file"} id={"contractFile"} onChange={handleChangeFile} style={{display:"None"}}/>
+                                                <input type={"file"} id={"contractFile"} name={"contractFile"} onChange={handleChangeFile} style={{display:"None"}}/>
                                             </dl>
                                             <a className="btn btn_large btn_red" onClick={handlerFileDownload}>계약서 파일 다운로드</a>
                                         </div>
