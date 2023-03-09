@@ -79,13 +79,6 @@ const SignUp = () => {
         if(name == "fax") fax.setInputValue(newData);
     }
 
-    // 숫자만 입력 처리
-    const handlerNumberChk = (e) => {
-        const newData = numberFormatChk(e.target.value);
-        const name = e.target.name;
-        if(name == "brno") brno.setInputValue(newData);
-    }
-
     // 폼체크
     const handelFrmCheck = async () => {
         // 필드검사 (회원)
@@ -178,7 +171,7 @@ const SignUp = () => {
                                     <div className="form_wrap">
                                         <div>
                                             <input type="text" name={"clinicName"} {...clinicName} placeholder="한의원명"/>
-                                            <input type="tel" name={"brno"} {...brno} placeholder="사업자등록번호" onKeyUp={handlerNumberChk}/>
+                                            <input type="tel" name={"brno"} {...brno} placeholder="사업자등록번호" onKeyUp={(e) => brno.setInputValue(numberFormatChk(e.target.value))}/>
                                             {/*주소 필드 클릭시 우편번호 찾기*/}
                                             <input type="text" name={"addr"} {...addr} placeholder="기본주소" readOnly onFocus={() => setPopup(true)}/>
                                             <input type="hidden" name={"zipCode"} {...zipCode} placeholder="우편번호"/>
