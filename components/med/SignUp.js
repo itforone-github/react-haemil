@@ -97,7 +97,7 @@ const SignUp = () => {
         if(memberName.value.length == 0 || memberName.value.length > 25) return swalMsg("이름을 25자 이내로 입력해 주세요.");
         if(password.value.length < 4) return swalMsg("비밀번호를 4자 이상 입력해 주세요.");
         if(password.value != passwordRe.value) return swalMsg("비밀번호가 일치하지 않습니다.");
-        if(birth.value.length == 0) return swalMsg("생년월일을 입력해 주세요.");
+        if(birth.value.length != 10) return swalMsg("생년월일을 올바르게 입력해 주세요.");
         if(hp.value.length == 0) return swalMsg("휴대폰번호를 입력해 주세요.");
         // 필드검사 (한의원)
         if(clinicName.value.length == 0 || clinicName.value.length > 40) return swalMsg("한의원명을 40자 이내로 입력해 주세요.");
