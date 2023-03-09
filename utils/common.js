@@ -1,6 +1,4 @@
 /*공통함수*/
-import Swal from "sweetalert2";
-
 /**
  * 전화번호 하이픈(-)
  * @param number: 입력 전화번호
@@ -22,17 +20,4 @@ export const hyphenFomatChk = (number) => {
 export const emailFormatChk = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
-}
-
-/**
- * 유효성검사 에러메세지
- * @param msg: 에러메세지
- */
-export const errMsg = (msg) => {
-    Swal.fire({
-        html: msg,
-        confirmButtonText: '확인'
-    });
-
-    return false;
 }

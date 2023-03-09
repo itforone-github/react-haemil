@@ -6,8 +6,10 @@ import {useRouter} from "next/router";
 import useInput from "@hooks/useInput";
 import SearchAddress from "@components/med/SearchAddress";
 import {useState} from "react";
-import {hyphenFomatChk, emailFormatChk, errMsg} from "@utils/common";
+import {hyphenFomatChk, emailFormatChk} from "@utils/common";
 import api from "@api/index";
+import {swalMsg, swalMsgUrl} from "@utils/sweetAlert";
+import {duplicateCheck} from "@api/med/signUpApi";
 
 const SignUp = () => {
     const router = useRouter();
@@ -48,14 +50,14 @@ const SignUp = () => {
 
     // 파일업로드 트리거
     const handleClickFile = (e) => {
-        let fileBtn = document.getElementById(e);
+        const fileBtn = document.getElementById(e);
         fileBtn.click();
     }
     // 파일 선택
     const handleChangeFile = (e) => {
-        let id = e.target.id;
-        let files = e.target.files[0];
-        let fileName = files.name;
+        const id = e.target.id;
+        const files = e.target.files[0];
+        const fileName = files.name;
         if(id == "contractFile") setContractFile(files);
         else setBizRegFile(files);
         document.querySelector("#"+id+"Name").textContent = fileName;
@@ -63,15 +65,15 @@ const SignUp = () => {
 
     // 계약서 파일 다운로드
     const handlerFileDownload = async () => {
-        let element = document.createElement('a');
+        const element = document.createElement('a');
         element.setAttribute('href',process.env.NEXT_PUBLIC_API_URL+'/api/download/contract');
         element.click();
     }
 
     // 연락처 하이픈(-) 처리
     const handlerHyphenChk = (e) => {
-        let newData = hyphenFomatChk(e.target.value);
-        let name = e.target.name;
+        const newData = hyphenFomatChk(e.target.value);
+        const name = e.target.name;
         if(name == "hp") hp.setInputValue(newData);
         if(name == "tel") tel.setInputValue(newData);
         if(name == "fax") fax.setInputValue(newData);
@@ -80,23 +82,31 @@ const SignUp = () => {
     // 폼체크
     const handelFrmCheck = async () => {
         // 필드검사 (회원)
-        if(memberId.value.length == 0 || memberId.value.length > 25) return errMsg("아이디를 25자 이내로 입력해 주세요.");
-        if(memberName.value.length == 0 || memberName.value.length > 25) return errMsg("이름을 25자 이내로 입력해 주세요.");
-        if(password.value.length < 4) return errMsg("비밀번호를 4자 이상 입력해 주세요.");
-        if(password.value != passwordRe.value) return errMsg("비밀번호가 일치하지 않습니다.");
-        if(birth.value.length == 0) return errMsg("생년월일을 입력해 주세요.");
-        if(hp.value.length == 0) return errMsg("휴대폰번호를 입력해 주세요.");
+        if(memberId.value.length == 0 || memberId.value.length > 25) return swalMsg("아이디를 25자 이내로 입력해 주세요.");
+        if(memberId.value.length > 0) {
+            const memberIdChk = await duplicateCheck("memberId", memberId.value);
+            if(memberIdChk > 0) return swalMsg("이미 등록된 아이디 입니다.");
+        }
+        if(memberName.value.length == 0 || memberName.value.length > 25) return swalMsg("이름을 25자 이내로 입력해 주세요.");
+        if(password.value.length < 4) return swalMsg("비밀번호를 4자 이상 입력해 주세요.");
+        if(password.value != passwordRe.value) return swalMsg("비밀번호가 일치하지 않습니다.");
+        if(birth.value.length == 0) return swalMsg("생년월일을 입력해 주세요.");
+        if(hp.value.length == 0) return swalMsg("휴대폰번호를 입력해 주세요.");
         // 필드검사 (한의원)
-        if(clinicName.value.length == 0 || clinicName.value.length > 40) return errMsg("한의원명을 40자 이내로 입력해 주세요.");
-        if(repName.value.length == 0 || repName.value.length > 30) return errMsg("대표자명을 30자 이내로 입력해 주세요.");
-        if(brno.value.length == 0 || brno.value.length > 13) return errMsg("사업자등록번호를 올바르게 입력해 주세요.");
-        if(addr.length == 0) return errMsg("주소를 입력해 주세요.");
-        if(tel.value.length == 0) return errMsg("대표전화를 입력해 주세요.");
-        if(email.value.length > 0) if(!emailFormatChk(email.value)) return errMsg("이메일을 올바르게 입력해 주세요.");
-        if(bizRegFile.name == undefined) return errMsg("사업자등록증 파일을 등록해 주세요.");
-        if(contractFile.name == undefined) return errMsg("원외탕전실 계약서 파일을 등록해 주세요.");
+        if(clinicName.value.length == 0 || clinicName.value.length > 40) return swalMsg("한의원명을 40자 이내로 입력해 주세요.");
+        if(repName.value.length == 0 || repName.value.length > 30) return swalMsg("대표자명을 30자 이내로 입력해 주세요.");
+        if(brno.value.length == 0 || brno.value.length > 13) return swalMsg("사업자등록번호를 올바르게 입력해 주세요.");
+        if(brno.value.length > 0) {
+            const brnoCheck = await duplicateCheck("brno", brno.value);
+            if(brnoCheck > 0) return swalMsg("이미 등록된 사업자 등록번호 입니다.");
+        }
+        if(addr.length == 0) return swalMsg("주소를 입력해 주세요.");
+        if(tel.value.length == 0) return swalMsg("대표전화를 입력해 주세요.");
+        if(email.value.length > 0) if(!emailFormatChk(email.value)) return swalMsg("이메일을 올바르게 입력해 주세요.");
+        if(bizRegFile.name == undefined) return swalMsg("사업자등록증 파일을 등록해 주세요.");
+        if(contractFile.name == undefined) return swalMsg("원외탕전실 계약서 파일을 등록해 주세요.");
 
-        let formData = new FormData(document.forms[0]);
+        const formData = new FormData(document.forms[0]);
         // formData.append("memberId", memberId.value);
         // formData.append("password", password.value);
         // formData.append("memberName", memberName.value);
@@ -117,16 +127,17 @@ const SignUp = () => {
         formData.append("contractFile", contractFile);
         formData.append("bizRegFile", bizRegFile);
 
-        await api.post('/api/signUp', formData, {
+        await api.post("/api/signUp", formData, {
             headers: {
-                'Content-Type': 'multipart/form-data'
+                "Content-Type": "multipart/form-data"
             }
         }).then((response) => {
-            console.log("success", response);
-            console.log(response.data); // return json data
-            router.replace("/");
+            // console.log("success", response);
+            // console.log(response.data); // return json data
+            swalMsgUrl("회원가입이 완료되었습니다.", "/");
         }).catch((error) => {
-            console.log("error", error)
+            // console.log("error", error);
+            swalMsg(error.data.message);
         });
     };
 
