@@ -63,13 +63,6 @@ const SignUp = () => {
         document.querySelector("#"+id+"Name").textContent = fileName;
     }
 
-    // 계약서 파일 다운로드
-    const handlerFileDownload = async () => {
-        const element = document.createElement('a');
-        element.setAttribute('href',process.env.NEXT_PUBLIC_API_URL+'/api/download/contract');
-        element.click();
-    }
-
     // 연락처 하이픈(-) 처리
     const handlerHyphenChk = (e) => {
         const newData = hyphenFomatChk(e.target.value);
@@ -204,7 +197,7 @@ const SignUp = () => {
                                                 <dd><a className="btn btn_black" onClick={() => handleClickFile("contractFile")}>파일첨부</a> <span id={"contractFileName"}>파일을 선택하세요..</span></dd>
                                                 <input type={"file"} id={"contractFile"} name={"contractFile"} onChange={handleChangeFile} style={{display:"None"}}/>
                                             </dl>
-                                            <a className="btn btn_large btn_red" onClick={handlerFileDownload}>계약서 파일 다운로드</a>
+                                            <a className="btn btn_large btn_red" href={process.env.NEXT_PUBLIC_API_URL+"/api/download/contract"}>계약서 파일 다운로드</a>
                                         </div>
                                     </div>
                                 </div>
