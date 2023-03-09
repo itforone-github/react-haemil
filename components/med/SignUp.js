@@ -66,7 +66,7 @@ const SignUp = () => {
     // 계약서 파일 다운로드
     const handlerFileDownload = () => {
         const element = document.createElement("a");
-        element.setAttribute("href",apiURL+"/api/download/contract");
+        element.setAttribute("href",apiURL+"api/download/contract");
         element.click();
     }
 
