@@ -21,3 +21,11 @@ export const emailFormatChk = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
+
+/**
+ * 숫자만 입력
+ * @pamra inputData: 입력 데이터
+ */
+export const numberFormatChk = (inputData) => {
+    return inputData.replace(/[^\d]/g,"");
+}

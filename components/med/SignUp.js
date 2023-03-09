@@ -6,7 +6,7 @@ import {useRouter} from "next/router";
 import useInput from "@hooks/useInput";
 import SearchAddress from "@components/med/SearchAddress";
 import {useState} from "react";
-import {hyphenFomatChk, emailFormatChk} from "@utils/common";
+import {hyphenFomatChk, emailFormatChk, numberFormatChk} from "@utils/common";
 import api from "@api/index";
 import {swalMsg, swalMsgUrl} from "@utils/sweetAlert";
 import {duplicateCheck} from "@api/med/signUpApi";
@@ -77,6 +77,13 @@ const SignUp = () => {
         if(name == "hp") hp.setInputValue(newData);
         if(name == "tel") tel.setInputValue(newData);
         if(name == "fax") fax.setInputValue(newData);
+    }
+
+    // 숫자만 입력 처리
+    const handlerNumberChk = (e) => {
+        const newData = numberFormatChk(e.target.value);
+        const name = e.target.name;
+        if(name == "brno") brno.setInputValue(newData);
     }
 
     // 폼체크
@@ -171,12 +178,12 @@ const SignUp = () => {
                                     <div className="form_wrap">
                                         <div>
                                             <input type="text" name={"clinicName"} {...clinicName} placeholder="한의원명"/>
-                                            <input type="text" name={"brno"} {...brno} placeholder="사업자등록번호"/>
+                                            <input type="tel" name={"brno"} {...brno} placeholder="사업자등록번호" onKeyUp={handlerNumberChk}/>
+                                            {/*주소 필드 클릭시 우편번호 찾기*/}
                                             <input type="text" name={"addr"} {...addr} placeholder="기본주소" readOnly onFocus={() => setPopup(true)}/>
                                             <input type="hidden" name={"zipCode"} {...zipCode} placeholder="우편번호"/>
                                             <input type="hidden" name={"lat"} {...lat} placeholder="위도"/>
                                             <input type="hidden" name={"lng"} {...lng} placeholder="경도"/>
-                                            {/*주소 필드 클릭시 우편번호 찾기*/}
                                             <input type="text" name={"addrDetail"} {...addrDetail} placeholder="상세주소"/>
                                         </div>
                                         <div>
