@@ -11,12 +11,12 @@ import {swalMsg} from "@utils/sweetAlert";
  * @return count: 개수
  */
 export const duplicateCheck = async (target, inputData) => {
-    let apiURL = "";
+    let URL = "";
     let count = 0;
-    if(target == "memberId") apiURL = "/api/idCheck?id="+inputData; // 아이디중복체크
-    else if(target == "brno") apiURL = "/api/brnoCheck?brno="+inputData; // 사업자번호중복체크
+    if(target == "memberId") URL = "/api/idCheck?id="+inputData; // 아이디중복체크
+    else if(target == "brno") URL = "/api/brnoCheck?brno="+inputData; // 사업자번호중복체크
 
-    await api.get(apiURL).then((response) => {
+    await api.get(URL).then((response) => {
         // console.log("success", response);
         // console.log(response.data.count); // return json data
         count = response.data.count;
