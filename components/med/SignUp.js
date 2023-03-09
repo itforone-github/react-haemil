@@ -65,8 +65,8 @@ const SignUp = () => {
 
     // 계약서 파일 다운로드
     const handlerFileDownload = () => {
-        const element = document.createElement('a');
-        element.setAttribute('href',process.env.NEXT_PUBLIC_API_URL+'/api/download/contract');
+        const element = document.createElement("a");
+        element.setAttribute("href","http://15.165.92.13:8200/api/download/contract");
         element.click();
     }
 
