@@ -7,7 +7,7 @@ import useInput from "@hooks/useInput";
 import SearchAddress from "@components/med/SearchAddress";
 import {useState} from "react";
 import {hyphenFomatChk, emailFormatChk, numberFormatChk} from "@utils/common";
-import api from "@api/index";
+import api, {apiURL} from "@api/index";
 import {swalMsg, swalMsgUrl} from "@utils/sweetAlert";
 import {duplicateCheck} from "@api/med/signUpApi";
 
@@ -66,7 +66,7 @@ const SignUp = () => {
     // 계약서 파일 다운로드
     const handlerFileDownload = () => {
         const element = document.createElement("a");
-        element.setAttribute("href","http://15.165.92.13:8200/api/download/contract");
+        element.setAttribute("href",apiURL+"/api/download/contract");
         element.click();
     }
 
