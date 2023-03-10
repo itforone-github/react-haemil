@@ -1,9 +1,9 @@
-/* 2.1 환자메인 */
-import Main from "@components/med/Main";
+/* 1.1 로그인 */
 import Login from "@components/med/Login";
+import Main from "@components/med/Main";
 import {useSelector} from "react-redux";
 
-const MainPage = () => {
+const LoginPage = () => {
     // 로그인 여부 확인
     const isLogin = useSelector((state) => state.isLogin);
 
@@ -14,4 +14,4 @@ const MainPage = () => {
     );
 }
 
-export default MainPage;
+export default LoginPage;

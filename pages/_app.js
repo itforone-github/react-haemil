@@ -5,6 +5,9 @@
  * @param pageProps: getInitialProps 통해 전달받은 props
  */
 import PropTypes from "prop-types";
+import {Provider} from "react-redux";
+import {PersistGate} from "redux-persist/integration/react";
+import {store, persistor} from "@reducers/index";
 // css
 import "@styles/bootstrap.min.css";
 import "@styles/all.min.css";
@@ -17,7 +20,11 @@ import "@styles/med.css";
 const HamilApp = ({Component, pageProps}) => {
     return (
         <>
-            <Component {...pageProps}/>
+            <Provider store={store}>
+                <PersistGate loading={null} persistor={persistor}>
+                    <Component {...pageProps}/>
+                </PersistGate>
+            </Provider>
         </>
     )
 };

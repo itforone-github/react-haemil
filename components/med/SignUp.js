@@ -6,8 +6,8 @@ import {useRouter} from "next/router";
 import useInput from "@hooks/useInput";
 import SearchAddress from "@components/med/SearchAddress";
 import {useState} from "react";
-import {hyphenFomatChk, emailFormatChk, numberFormatChk} from "@utils/common";
-import api, {apiURL} from "@api/index";
+import {hyphenFomatChk, emailFormatChk, numberFormatChk, errMsg} from "@utils/common";
+import Api, {apiURL} from "@api/index";
 import {swalMsg, swalMsgUrl} from "@utils/sweetAlert";
 import {duplicateCheck} from "@api/med/signUpApi";
 
@@ -127,17 +127,17 @@ const SignUp = () => {
         formData.append("contractFile", contractFile);
         formData.append("bizRegFile", bizRegFile);
 
-        await api.post("/api/signUp", formData, {
+        await Api.post("/api/signUp", formData, {
             headers: {
                 "Content-Type": "multipart/form-data"
             }
         }).then((response) => {
-            // console.log("success", response);
-            // console.log(response.data); // return json data
-            swalMsgUrl("회원가입이 완료되었습니다.", "/");
+            // console.log("success", response.data);
+            if(response.data.result) swalMsgUrl("회원가입이 완료되었습니다.", "/");
+            else swalMsg(result.message);
         }).catch((error) => {
-            // console.log("error", error);
-            swalMsg(error.data.message);
+            console.log("error", error.data);
+            swalMsg(errMsg);
         });
     };
 

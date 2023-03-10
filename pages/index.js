@@ -1,13 +1,17 @@
 /* med(한의원) 첫페이지 */
 import Login from "@components/med/Login";
-import Main from "./main";
+import Main from "@components/med/Main";
+import {useSelector} from "react-redux";
 
-const IndexPage = () => {
+const IndexPage = ({}) => {
     // 로그인 여부 확인
-    const isLogin = false;
+    const isLogin = useSelector((state) => state.isLogin);
+
     return (
         <>
-            {isLogin ? <Main/> : <Login/>}
+            <div>
+                {isLogin ? <Main/> : <Login/>}
+            </div>
         </>
     );
 }
