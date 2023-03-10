@@ -1,4 +1,4 @@
-/*사이드바*/
+/* 사이드바 */
 import {useRouter} from "next/router";
 
 const Sidebar = () => {

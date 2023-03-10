@@ -3,8 +3,9 @@
  */
 import {useRouter} from "next/router";
 import {swalMsg} from "@utils/sweetAlert";
-import {signIn} from "next-auth/react";
 import {useDispatch} from "react-redux";
+import Api from "@api/index";
+import {errMsg} from "@utils/common";
 
 const Login = () => {
     const router = useRouter();
@@ -18,21 +19,39 @@ const Login = () => {
         if(id.length == 0) return swalMsg("아이디를 입력해 주세요.");
         if(password.length == 0) return swalMsg("비밀번호를 입력해 주세요.");
 
-        // 로그인 인증
-        // [...nextauth].js에 정의된 Provider 호출
-        const response = await signIn('id-password-credential', {
-            id,
-            password,
-            redirect: false,
-            callbackUrl: "/main" // 로그인 완료 후 이동 페이지
+        // 로그인
+        await Api.post("/api/signIn", {
+            id: id,
+            password: password
+        }).then((response) => {
+            // console.log("success", response.data);
+            if(response.data.result) {
+                dispatch({type: "LOGIN"});
+                dispatch({type: "SESSIONID", data: response.data.memberId});
+                router.replace("/main");
+            } else {
+                swalMsg(response.data.message);
+            }
+        }).catch((error) => {
+            // console.log("error", error.data);
+            swalMsg(errMsg);
         });
-        if(response.ok) {
-            dispatch({type: "LOGIN"});
-            await router.replace(response.url);
-        }
-        else {
-            await swalMsg("아이디 비밀번호를 확인해 주세요.");
-        }
+
+        // // 로그인 인증
+        // // [...nextauth].js에 정의된 Provider 호출
+        // const response = await signIn('credentials', {
+        //     id,
+        //     password,
+        //     redirect: false,
+        //     callbackUrl: "/main" // 로그인 완료 후 이동 페이지
+        // });
+        // if(response.ok) { // 로그인 성공
+        //     dispatch({type: "LOGIN"});
+        //     await router.replace(response.url);
+        // }
+        // else { // 로그인 실패
+        //     await swalMsg("아이디 비밀번호를 확인해 주세요.");
+        // }
     };
 
     return (

@@ -10,6 +10,7 @@ module.exports = withBundleAnalyzer({
     experimental: {
         scrollRestoration: true, // 뒤로가기 시 스크롤 유지
     },
+    reactStrictMode: false,
     webpack(config, {webpack}) {
         const prod = process.env.NODE_ENV === 'production';
         return {

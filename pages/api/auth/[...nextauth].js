@@ -1,6 +1,7 @@
 /**
  * NextAuth
  * [...nextauth].js 경로 변경 X
+ * 사용 X
  */
 import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
@@ -9,7 +10,7 @@ import Api from "@api/index";
 export default NextAuth({
     providers: [
         Credentials({
-            id: "id-password-credential",
+            id: "credentials",
             type: "credentials",
             // credentials: {
             //     id: {type: "text", placeholder: "아이디"},

@@ -7,7 +7,10 @@ import {persistReducer, persistStore} from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 // 초기값
-export const initialState = { isLogin: false };
+export const initialState = {
+    isLogin: false,
+    sessionId: ""
+};
 
 // (이전 state, action) ==> 다음 state
 const rootReducer = (state = initialState, action) => {
@@ -17,6 +20,8 @@ const rootReducer = (state = initialState, action) => {
             return {...state, isLogin: true};
         case "LOGOUT":
             return {...state, isLogin: false};
+        case "SESSIONID":
+            return {...state, sessionId: action.data};
         default:
             return state;
     }

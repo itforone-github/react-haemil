@@ -1,4 +1,4 @@
-/*헤더*/
+/* 헤더 */
 import Sidebar from "./Sidebar";
 import {useRouter} from "next/router";
 
