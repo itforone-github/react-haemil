@@ -2,10 +2,9 @@
  * Redux Action
  * Action 발생 시 state 수정
  */
-import {combineReducers, createStore} from "redux";
+import {createStore} from "redux";
 import {persistReducer, persistStore} from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import auth from "@reducers/auth";
 
 // 초기값
 export const initialState = { isLogin: false };

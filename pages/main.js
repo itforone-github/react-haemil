@@ -4,8 +4,7 @@ import Login from "@components/med/Login";
 import {useSelector} from "react-redux";
 
 const MainPage = () => {
-    // 로그인 여부 확인
-    const isLogin = useSelector((state) => state.isLogin);
+    const isLogin = useSelector((state) => state.isLogin); // 로그인 여부
 
     return (
         <>

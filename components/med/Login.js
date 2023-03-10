@@ -27,7 +27,7 @@ const Login = () => {
             callbackUrl: "/main" // 로그인 완료 후 이동 페이지
         });
         if(response.ok) {
-            dispatch({ type: "LOGIN" });
+            dispatch({type: "LOGIN"});
             await router.replace(response.url);
         }
         else {
