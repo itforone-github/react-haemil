@@ -4,6 +4,7 @@
  * @param Component: 서버에 요청한 페이지
  * @param pageProps: getInitialProps 통해 전달받은 props
  */
+import Head from "next/head";
 import PropTypes from "prop-types";
 import {Provider} from "react-redux";
 import {PersistGate} from "redux-persist/integration/react";
@@ -22,6 +23,9 @@ const HamilApp = ({Component, pageProps}) => {
         <>
             <Provider store={store}>
                 <PersistGate loading={null} persistor={persistor}>
+                    <Head>
+                        <title>해밀원</title>
+                    </Head>
                     <Component {...pageProps}/>
                 </PersistGate>
             </Provider>
@@ -31,7 +35,7 @@ const HamilApp = ({Component, pageProps}) => {
 
 HamilApp.propTypes = {
     Component: PropTypes.elementType.isRequired,
-    pageProps: PropTypes.elementType.isRequired
+    // pageProps: PropTypes.elementType.isRequired
 }
 
 export default HamilApp;
