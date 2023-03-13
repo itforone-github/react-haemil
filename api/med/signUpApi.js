@@ -1,8 +1,9 @@
 /**
  * 회원가입 관련 API
  */
-import api from "@api/index";
+import Api from "@api/index";
 import {swalMsg} from "@utils/sweetAlert";
+import {errMsg} from "@utils/common";
 
 /**
  * 중복체크
@@ -16,13 +17,12 @@ export const duplicateCheck = async (target, inputData) => {
     if(target == "memberId") URL = "/api/idCheck?id="+inputData; // 아이디중복체크
     else if(target == "brno") URL = "/api/brnoCheck?brno="+inputData; // 사업자번호중복체크
 
-    await api.get(URL).then((response) => {
-        // console.log("success", response);
-        // console.log(response.data.count); // return json data
+    await Api.get(URL).then((response) => {
+        // console.log("success", response.data);
         count = response.data.count;
     }).catch((error) => {
-        // console.log("error", error);
-        swalMsg("오류가 발생하였습니다. 다시 시도해 주세요.");
+        // console.log("error", error.data);
+        swalMsg(errMsg);
     });
 
     return count;

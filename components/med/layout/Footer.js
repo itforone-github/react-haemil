@@ -1,4 +1,4 @@
-/*푸터*/
+/* 푸터 */
 const Footer = () => {
     return (
         <footer className="adm">

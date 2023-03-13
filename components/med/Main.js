@@ -9,7 +9,7 @@ const Main = () => {
 
     return (
         <>
-            <Layout id={"Main"} title={"환자 메인"} desc={"환자 관리, 진료 접수, 예약 관리가 가능합니다."}>
+            <Layout id={"Main"} title={"환자 메인"} desc={"환자 관리, 진료 접수, 예약 관리가 가능합니다."} pageId={1}>
                 <section className="treat main">
                     <div className="tm_register">
                         <h3>간편 환자등록</h3>

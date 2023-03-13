@@ -1,20 +1,19 @@
 /**
  * 3.2.4 탕전처방
- * TODO: 퍼블리싱 미완료
  */
 import Layout from "./layout/Layout";
 
-const PxPrescribe1View = () => {
+const PxPrescribe1Done = () => {
     return (
         <>
-            <Layout id="PxPrescribe1Vies">
+            <Layout id={"pxPrescribe1Done"} title={"주문 배송 관리"} desc={"처방 완료된 건의 상태 조회가 가능합니다."} pageId={1}>
                 <section className="px pre1">
                     <div className="box2">
                         <div className="box_title bg_red">
                             <strong>환자 정보</strong>
                             <div className="title_btn mari-auto">
                                 {/*<button type="button" className="btn btn_white">한의원으로 주문하기</button>
-                                <button type="button" className="btn btn_black"  data-toggle="modal" data-target="#pxmembermodal">환자 목록 보기</button>*/}
+                            <button type="button" className="btn btn_black"  data-toggle="modal" data-target="#pxmembermodal">환자 목록 보기</button>*/}
                             </div>
                             <div className="title_btn">
                                 {/*<button type="button" className="btn btn_white txt_red">신규 환자 저장</button>*/}
@@ -33,12 +32,12 @@ const PxPrescribe1View = () => {
                                     <p>
                                         <label>체질구분</label>
                                         <span className="circle">
-                                            <input type="radio" id="type5" name="type" checked onClick="return false;"/><label htmlFor="type5">없음</label>
-                                            <input type="radio" id="type1" name="type" onClick="return false;"/><label htmlFor="type1">태양인</label>
-                                            <input type="radio" id="type2" name="type" onClick="return false;"/><label htmlFor="type2">태음인</label>
-                                            <input type="radio" id="type3" name="type" onClick="return false;"/><label htmlFor="type3">소양인</label>
-                                            <input type="radio" id="type4" name="type" onClick="return false;"/><label htmlFor="type4">소음인</label>
-                                        </span>
+                                        <input type="radio" id="type5" name="type" checked onClick="return false;"/><label htmlFor="type5">없음</label>
+                                        <input type="radio" id="type1" name="type" onClick="return false;"/><label htmlFor="type1">태양인</label>
+                                        <input type="radio" id="type2" name="type" onClick="return false;"/><label htmlFor="type2">태음인</label>
+                                        <input type="radio" id="type3" name="type" onClick="return false;"/><label htmlFor="type3">소양인</label>
+                                        <input type="radio" id="type4" name="type" onClick="return false;"/><label htmlFor="type4">소음인</label>
+                                    </span>
                                     </p>
                                     <p><label>기본주소</label><input type="text" value="기본주소" readOnly/></p>
                                     <p><label>상세주소</label><input type="text" value="상세주소" readOnly/></p>
@@ -74,9 +73,9 @@ const PxPrescribe1View = () => {
                                     <h6>
                                         받는 사람
                                         {/*<span className="circle">
-                                            <input type="checkbox" id="check1" name="type" /> <label htmlFor="check1"> 한의원으로 배송</label>
-                                            <input type="checkbox" id="check2" name="type" /> <label htmlFor="check2"> 환자 정보와 동일</label>
-                                        </span>*/}
+                                        <input type="checkbox" id="check1" name="type" /> <label htmlFor="check1"> 한의원으로 배송</label>
+                                        <input type="checkbox" id="check2" name="type" /> <label htmlFor="check2"> 환자 정보와 동일</label>
+                                    </span>*/}
                                     </h6>
                                     <p><label>성함</label><input type="text" value="성함" readOnly/></p>
                                     <p><label>우편번호</label><input type="text" value="우편번호" readOnly/></p>
@@ -106,15 +105,14 @@ const PxPrescribe1View = () => {
                                 <div className="mari-auto" style={{lineHeight:'40px'}}>
                                     <input type="checkbox" id="check3" name="type" readOnly/> <label htmlFor="check3"> 첩약보험탕전</label>
                                     {/*첩약보험탕전 시 노출
-                                    <br><span className="circle">
-                                        <input type="radio" id="check3-1" name="check3" /> <label htmlFor="check3-1"> 10일분(20첩)-31,250원</label>
-                                        <input type="radio" id="check3-2" name="check3" /> <label htmlFor="check3-2"> 5일분(10첩)-15,630원</label>
-                                    </span>
-                                    첩약보험탕전 시 노출*/}
+                                <br><span className="circle">
+                                    <input type="radio" id="check3-1" name="check3" /> <label htmlFor="check3-1"> 10일분(20첩)-31,250원</label>
+                                    <input type="radio" id="check3-2" name="check3" /> <label htmlFor="check3-2"> 5일분(10첩)-15,630원</label>
+                                </span>
+                                첩약보험탕전 시 노출*/}
                                 </div>
                                 <div className="btn_box">
-                                    <button type="button" className="btn btn_blue" data-toggle="modal" data-target="#pxlistmodal">기성처방/나의처방
-                                    </button>
+                                    <button type="button" className="btn btn_blue" data-toggle="modal" data-target="#pxlistmodal">기성처방/나의처방</button>
                                     <button type="button" className="btn btn_red" data-toggle="modal" data-target="#pxmedimodal">약재 전체보기</button>
                                     <div className="search">
                                         <input className="search-bar" type="search" placeholder="검색어를 입력하세요"/>
@@ -186,10 +184,10 @@ const PxPrescribe1View = () => {
                                 <p>
                                     첩수
                                     <span className="input_no">
-                                        <button type="button" onClick=""><i className="far fa-minus"></i>{/*수량감소*/}</button>
+                                    <button type="button" onClick=""><i className="far fa-minus"></i></button>{/*수량감소*/}
                                         <input type="text" name="cheup_cnt" value="2" readOnly/>
-                                        <button type="button" onClick=""><i className="far fa-plus"></i>{/*수량증가*/}</button>
-                                    </span>
+                                    <button type="button" onClick=""><i className="far fa-plus"></i></button>{/*수량증가*/}
+                                </span>
                                 </p>
                                 <select name="option">
                                     <option value="">일반</option>
@@ -198,52 +196,52 @@ const PxPrescribe1View = () => {
                                 <p>
                                     팩수
                                     <span className="input_no">
-                                        <button type="button" onClick=""><i className="far fa-minus"></i>{/*수량감소*/}</button>
+                                    <button type="button" onClick=""><i className="far fa-minus"></i></button>{/*수량감소*/}
                                         <input type="text" name="cheup_cnt" value="2" readOnly/>
-                                        <button type="button" onClick=""><i className="far fa-plus"></i>{/*수량증가*/}</button>
-                                    </span>
+                                    <button type="button" onClick=""><i className="far fa-plus"></i></button>{/*수량증가*/}
+                                </span>
                                 </p>
                                 <p>
                                     팩용량
                                     <span className="input_no">
-                                         <button type="button" onClick=""><i className="far fa-minus"></i>{/*수량감소*/}</button>
+                                    <button type="button" onClick=""><i className="far fa-minus"></i></button>{/*수량감소*/}
                                         <input type="text" name="cheup_cnt" value="2" readOnly/>
-                                        <button type="button" onClick=""><i className="far fa-plus"></i>{/*수량증가*/}</button>
-                                    </span>
+                                    <button type="button" onClick=""><i className="far fa-plus"></i></button>{/*수량증가*/}
+                                </span>
                                 </p>
                                 <button type="button" className="btn btn_gray2 btn_h40">기본설정</button>
                             </div>
                             <div className="box_line2">
-                            <span>
-                                <input type="checkbox" id="plus1" name="type" readOnly/> <label htmlFor="plus1"> 재탕</label>
-                                <input type="checkbox" id="plus2" name="type" readOnly/> <label htmlFor="plus2"> 주수상반</label>
-                            </span>
+                    <span>
+                        <input type="checkbox" id="plus1" name="type" readOnly/> <label htmlFor="plus1"> 재탕</label>
+                        <input type="checkbox" id="plus2" name="type" readOnly/> <label htmlFor="plus2"> 주수상반</label>
+                    </span>
                                 {/*주수상반시 노출
-                                <p><strong>주수상반</strong>
-                                    <select name="option" className="plus2">
-                                        <option value="">전부 적용</option>
-                                        <option value="">탕전비만 적용</option>
-                                    </select>
-                                </p>
-                                주수상반시*/}
+                            <p><strong>주수상반</strong>
+                                <select name="option" className="plus2">
+                                    <option value="">전부 적용</option>
+                                    <option value="">탕전비만 적용</option>
+                                </select>
+                            </p>
+                            주수상반시*/}
                                 {/*재탕시 노출
-                                <div className="flex">
-                                    <p><strong>재탕</strong> 팩수
-                                        <span className="input_no">
-                                            <button type="button" onClick=""><i className="far fa-minus"></i></button>
-                                            <input type="text" name="cheup_cnt" value="45">
-                                            <button type="button" onClick=""><i className="far fa-plus"></i></button>
-                                        </span>
-                                    </p>
-                                    <p>팩용량
-                                        <span className="input_no">
-                                            <button type="button" onClick=""><i className="far fa-minus"></i></button>
-                                            <input type="text" name="cheup_cnt" value="120">
-                                            <button type="button" onClick=""><i className="far fa-plus"></i></button>
-                                        </span>
-                                    </p>
-                                </div>
-                                재탕시*/}
+                            <div className="flex">
+                                <p><strong>재탕</strong> 팩수
+                                    <span className="input_no">
+                                        <button type="button" onClick=""><i className="far fa-minus"></i></button>
+                                        <input type="text" name="cheup_cnt" value="45">
+                                        <button type="button" onClick=""><i className="far fa-plus"></i></button>
+                                    </span>
+                                </p>
+                                <p>팩용량
+                                    <span className="input_no">
+                                        <button type="button" onClick=""><i className="far fa-minus"></i></button>
+                                        <input type="text" name="cheup_cnt" value="120">
+                                        <button type="button" onClick=""><i className="far fa-plus"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+                            재탕시 노출*/}
                             </div>
                             <div className="box_line">
                                 <textarea placeholder="처방 비고를 입력하세요.(탕전실에 전달됩니다.)" readOnly>처방 비고를 입력하세요.(탕전실에 전달됩니다.)</textarea>
@@ -267,7 +265,8 @@ const PxPrescribe1View = () => {
                                 <div className="title_btn mari-auto">
                                     <input type="text" className="btn btn_line" value="복용법명을 입력하세요." readOnly/>
                                     <button type="button" className="btn btn_black">복용법 저장</button>
-                                    <button type="button" className="btn btn_red" data-toggle="modal" data-target="#pxtakemodal">복용법 목록</button>
+                                    <button type="button" className="btn btn_red" data-toggle="modal" data-target="#pxtakemodal">복용법 목록
+                                    </button>
                                 </div>
                                 <div className="title_btn">
                                     <button type="button" className="btn btn_gray">복용법 없음</button>
@@ -276,19 +275,19 @@ const PxPrescribe1View = () => {
                             </div>
                             <div className="box_line1">
                                 <div className="flex w100">
-                                    <select>
+                                    <select readOnly>
                                         <option value="">식전</option>
                                     </select>
-                                    <select>
+                                    <select readOnly>
                                         <option value="">10분</option>
                                     </select>
-                                    <select>
+                                    <select readOnly>
                                         <option value="">1회</option>
                                     </select>
                                 </div>
                             </div>
                             <div className="box_line2">
-                                <div className="editor"> {/*에디터 적용*/}
+                                <div className="editor">{/*에디터 적용*/}
                                     <textarea placeholder="복용법을 입력하세요." readOnly>복용법을 입력하세요.</textarea>
                                 </div>
                                 <dl className="file_wrap">
@@ -354,10 +353,10 @@ const PxPrescribe1View = () => {
                             <div className="box_line2">
                                 <p className="tit">달이는 시간 <span>달이는 시간을 선택해 주세요.</span></p>
                                 <span className="circle">
-                                    <input type="radio" id="time1" name="time" onClick="return false;"/> <label htmlFor="time1"> 1시간 30분</label>
-                                    <input type="radio" id="time2" name="time" onClick="return false;"/> <label htmlFor="time2"> 2시간</label>
-                                    <input type="radio" id="time3" name="time" onClick="return false;"/> <label htmlFor="time3"> 3시간</label>
-                                </span>
+                                <input type="radio" id="time1" name="time" onClick="return false;"/> <label htmlFor="time1"> 1시간 30분</label>
+                                <input type="radio" id="time2" name="time" onClick="return false;"/> <label htmlFor="time2"> 2시간</label>
+                                <input type="radio" id="time3" name="time" onClick="return false;"/> <label htmlFor="time3"> 3시간</label>
+                            </span>
                             </div>
                         </div>
                     </div>
@@ -407,4 +406,4 @@ const PxPrescribe1View = () => {
     );
 }
 
-export default PxPrescribe1View; 
+export default PxPrescribe1Done;

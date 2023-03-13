@@ -1,19 +1,57 @@
 /**
  * 1.1 로그인
- * TODO:기능작업필요
  */
-import {useState} from "react";
 import {useRouter} from "next/router";
+import {swalMsg} from "@utils/sweetAlert";
+import {useDispatch} from "react-redux";
+import Api from "@api/index";
+import {errMsg} from "@utils/common";
 
 const Login = () => {
     const router = useRouter();
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log("Username: ", username);
-        console.log("Password: ", password);
-        alert("Username/Password: "+username+"/"+password);
+    const dispatch = useDispatch();
+
+    // 로그인
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        let id = e.target.id.value;
+        let password = e.target.password.value;
+        if(id.length == 0) return swalMsg("아이디를 입력해 주세요.");
+        if(password.length == 0) return swalMsg("비밀번호를 입력해 주세요.");
+
+        // 로그인
+        await Api.post("/api/signIn", {
+            id: id,
+            password: password
+        }).then((response) => {
+            // console.log("success", response.data);
+            if(response.data.result) {
+                dispatch({type: "LOGIN"});
+                dispatch({type: "SESSIONID", data: response.data.memberId});
+                router.replace("/main");
+            } else {
+                swalMsg(response.data.message);
+            }
+        }).catch((error) => {
+            // console.log("error", error.data);
+            swalMsg(errMsg);
+        });
+
+        // // 로그인 인증
+        // // [...nextauth].js에 정의된 Provider 호출
+        // const response = await signIn('credentials', {
+        //     id,
+        //     password,
+        //     redirect: false,
+        //     callbackUrl: "/main" // 로그인 완료 후 이동 페이지
+        // });
+        // if(response.ok) { // 로그인 성공
+        //     dispatch({type: "LOGIN"});
+        //     await router.replace(response.url);
+        // }
+        // else { // 로그인 실패
+        //     await swalMsg("아이디 비밀번호를 확인해 주세요.");
+        // }
     };
 
     return (
@@ -23,12 +61,11 @@ const Login = () => {
                     <h1><img src="/img/common/logo_w.svg" alt="해밀한의원 원외탕전실"/></h1>
 
                     <div className="login_form">
-                        <form>
+                        <form onSubmit={handleLogin}>
                             <div className="form_wrap">
-                                <input type="text" placeholder="아이디" onChange={(event) => setUsername(event.target.value)}/>
-                                <input type="password" placeholder="비밀번호" onChange={(event) => setPassword(event.target.value)}/>
-                                {/*<a className="btn btn_sdw btn_large btn_red" onClick={handleSubmit}>로그인</a>*/}
-                                <a className="btn btn_sdw btn_large btn_red" onClick={() => router.push("/main")}>로그인</a> {/*TODO: 기능 구현 후 수정*/}
+                                <input type="text" name={"id"} placeholder="아이디"/>
+                                <input type="password" name={"password"} placeholder="비밀번호"/>
+                                <button type={"submit"} className="btn btn_sdw btn_large btn_red">로그인</button>
                             </div>
 
                             <div className="btn_wrap">

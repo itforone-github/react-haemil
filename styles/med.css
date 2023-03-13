@@ -5,6 +5,32 @@
     font-size: 1.1em;
 }
 
+.mb20 {
+    margin-bottom: 20px
+}
+
+.flex {
+    display: flex;
+    align-items: flex-start;
+}
+
+.flex.js {
+    justify-content: space-between;
+}
+
+.flex.ac {
+    align-items: center;
+}
+
+.flex > div {
+    margin-right: 18px;
+    width: 100%;
+}
+
+.flex > div:last-child {
+    margin-right: 0;
+}
+
 .main {
     display: flex;
     align-items: flex-end;
@@ -337,6 +363,78 @@
 }
 
 
+/*게시판 상세*/
+.board_view .view_info {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.board_view .view_info .sub span {
+    margin: 0 12px;
+    color: #484951
+}
+
+.board_view .view_title {
+    font-size: 1.4em;
+    font-weight: 800;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.board_view .view_title strong {
+    display: inline-block;
+    background-color: #ddd;
+    font-size: 0.8em;
+    line-height: 1.4em;
+    padding: 2px 12px;
+    border-radius: 20px;
+    margin-right: 6px;
+}
+
+.board_view dl {
+    margin-bottom: 20px;
+}
+
+.board_view dl dt {
+    font-size: 1.2em;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.board_view dl dd {
+    background-color: #F6F6F6;
+    padding: 20px;
+}
+
+.board_view .download {
+    font-weight: 800;
+    text-decoration: underline;
+    margin-bottom: 12px;
+    padding: 0;
+    background-color: transparent
+}
+
+.board_form textarea {
+    min-height: 300px;
+}
+
+.board_view .answer {
+    background: #F6F6F6;
+    padding: 20px !important;
+}
+
+.board_view .answer textarea {
+    border: 1px solid #E8E8E8
+}
+
+.board_view .answer > div {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+
 /** 1.환자진료 - 메인 **/
 .treat.main .list li .state.ing {
     color: #36A102;
@@ -420,35 +518,35 @@
 }
 
 /*환자과거처방기록*/
-.t_patient .past_btn.selected td {
+.past_btn.selected td {
     background: RGBA(72, 73, 81, 0.05);
     font-weight: 600
 }
 
-.t_patient .past_list {
+.past_list {
     font-size: 0.8em;
     background: RGBA(72, 73, 81, 0.05);
 }
 
-.t_patient .past_list > td {
+.past_list > td {
     padding: 4px;
 }
 
-.t_patient .past_list table th,
-.t_patient .past_list table td {
+.past_list table th,
+.past_list table td {
     border-bottom: 1px solid #ddd;
     padding: 4px
 }
 
-.t_patient .past_list table th {
+.past_list table th {
     background: RGBA(72, 73, 81, 0.1);
 }
 
-.t_patient .past_list table td {
-    background: #fff;
+.past_list table td {
+    background: #fff !important;
 }
 
-.t_patient .past_list table .state {
+.past_list table .state {
     color: #BC2D1E
 }
 
@@ -497,6 +595,59 @@
     margin-left: 4px;
 }
 
+#reviewmodal {
+    color: #373844
+}
+
+#reviewmodal .info {
+    font-size: 1.1em;
+}
+
+#reviewmodal .info > div {
+    margin-bottom: 4px;
+}
+
+#reviewmodal .info > div:last-child {
+    margin-bottom: 0;
+}
+
+#reviewmodal .info p {
+    margin-right: 10px;
+}
+
+#reviewmodal .info span {
+    display: inline-block;
+    margin-left: 4px;
+}
+
+#reviewmodal .info,
+#reviewmodal dd {
+    background-color: #fff;
+    padding: 20px;
+}
+
+#reviewmodal dt {
+    font-size: 1.2em;
+    margin: 14px 0 4px;
+}
+
+#reviewmodal dt span {
+    font-size: 0.75em;
+    display: inline-block;
+    margin-left: 4px;
+}
+
+i.icon {
+    display: inline-block;
+    font-style: normal;
+    font-size: 11px;
+    background-color: #FFD0CB;
+    color: #BC2D1E;
+    padding: 4px 6px;
+    border-radius: 5px;
+    line-height: 1em;
+    margin: 0 6px;
+}
 
 /** 2.처방하기 - 메인 **/
 .px.main .box_title input[type=date] {
@@ -543,7 +694,6 @@
 .pm_notice .date_time {
     opacity: 0.5;
 }
-
 
 /*복용법 관리*/
 .select_wrap {
@@ -728,8 +878,8 @@
 
 /*장바구니*/
 .m_cart .img {
-    width: 227px;
-    height: 84px;
+    width: 200px;
+    height: 140px;
     display: inline-block;
 }
 
@@ -771,12 +921,15 @@
 /*한의학몰 리스트&약속처방재*/
 .mall_list > ul {
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 30px;
     margin-right: -26px;
 }
 
 .mall_list > ul li {
     margin-right: 26px;
+    width: calc((100% / 5) - 26px);
+    margin-bottom: 26px;
     background: #FFFFFF;
     box-shadow: 0px 0px 15px #0000000D;
     border-radius: 5px;
@@ -784,6 +937,7 @@
 }
 
 .mall_list > ul li .img {
+    width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;
 }
@@ -851,87 +1005,87 @@
 
 
 /*약속처방재-상세*/
-.p_coded.view {
+.mall_view {
     color: #373844
 }
 
-.p_coded.view .box2 {
+.mall_view .box2 {
     padding: 45px;
 }
 
-.p_coded.view h5 {
+.mall_view h5 {
     font-size: 1.2em;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-.p_coded.view .area_top .btn_wrap {
+.mall_view .area_top .btn_wrap {
     padding-top: 0;
 }
 
-.p_coded.view .pc_slider {
+.mall_view .pc_slider {
     width: 500px;
     margin-right: 100px;
 }
 
-.p_coded.view .swiper-slide img {
+.mall_view .swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.p_coded.view .swiper-slide {
+.mall_view .swiper-slide {
     width: 500px;
     height: 500px;
 }
 
-.p_coded.view .swiper-free-mode {
+.mall_view .swiper-free-mode {
     margin-top: 40px;
 }
 
-.p_coded.view .swiper-free-mode > .swiper-wrapper {
+.mall_view .swiper-free-mode > .swiper-wrapper {
     justify-content: center;
 }
 
-.p_coded.view .swiper-free-mode > .swiper-wrapper .swiper-slide {
+.mall_view .swiper-free-mode > .swiper-wrapper .swiper-slide {
     width: 90px;
     height: 90px;
 }
 
-.p_coded.view .mySwiper .swiper-slide-thumb-active {
+.mall_view .mySwiper .swiper-slide-thumb-active {
     border: 2px solid #BC2D1E;
 }
 
-.p_coded.view .pc_title {
+.mall_view .pc_title {
     margin-bottom: 16px;
 }
 
-.p_coded.view .pc_title h4 {
+.mall_view .pc_title h4 {
     font-weight: 600;
 }
 
-.p_coded.view .pc_title p {
+.mall_view .pc_title p {
     font-weight: 800;
     line-height: 1.2em;
 }
 
-.p_coded.view .pc_title .pc_name {
+.mall_view .pc_title .pc_name {
     font-size: 2em;
     margin-bottom: 6px;
 }
 
-.p_coded.view .pc_title .pc_price {
+.mall_view .pc_title .pc_price {
     font-size: 1.4em;
 }
 
-.p_coded.view .pc_info,
-.p_coded.view .pc_medicine {
+.mall_view .pc_info,
+.mall_view .pc_medicine {
     background: #FAFBFD;
     margin-bottom: 16px;
     padding: 24px;
 }
 
-.p_coded.view .pc_info dl {
+.mall_view .pc_info dl {
     border-right: 1px solid #ddd;
     padding-right: 24px;
     margin-right: 24px;
@@ -940,39 +1094,39 @@
     width: 50%;
 }
 
-.p_coded.view .pc_info dl:last-child {
+.mall_view .pc_info dl:last-child {
     border-right: 0;
     padding-right: 0;
     margin-right: 0;
 }
 
-.p_coded.view .pc_info dl dt {
+.mall_view .pc_info dl dt {
     width: 55px;
     font-weight: 600;
 }
 
-.p_coded.view .pc_info dl dd {
+.mall_view .pc_info dl dd {
     width: calc(100% - 55px);
 }
 
-.p_coded.view .pc_medicine .table {
+.mall_view .pc_medicine .table {
     font-size: 0.9em;
 }
 
-.p_coded.view .pc_medicine .table tr:nth-child(odd) td {
+.mall_view .pc_medicine .table tr:nth-child(odd) td {
     background: #fff;
 }
 
-.p_coded.view .pc_medicine .table th,
-.p_coded.view .pc_medicine .table td {
+.mall_view .pc_medicine .table th,
+.mall_view .pc_medicine .table td {
     padding: 14px 22px
 }
 
-.p_coded.view .pc_qty dt p {
+.mall_view .pc_qty dt p {
     margin-bottom: 4px;
 }
 
-.p_coded.view .pc_qty dd {
+.mall_view .pc_qty dd {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -980,12 +1134,12 @@
     padding: 14px 0;
 }
 
-.p_coded.view .pc_qty dd p {
+.mall_view .pc_qty dd p {
     font-weight: 600;
     font-size: 1.2em;
 }
 
-.p_coded.view .pc_product .pc_total {
+.mall_view .pc_product .pc_total {
     text-align: right;
     font-size: 1.2em;
     font-weight: 400;
@@ -993,15 +1147,15 @@
     margin-top: 20px;
 }
 
-.p_coded.view .pc_product .pc_total strong {
+.mall_view .pc_product .pc_total strong {
     font-size: 1.2em;
 }
 
-.p_coded.view .pc_product .btn_wrap {
+.mall_view .pc_product .btn_wrap {
     display: flex;
 }
 
-.p_coded.view .pc_product .btn_wrap .btn_wish {
+.mall_view .pc_product .btn_wrap .btn_wish {
     display: block;
     font-size: 2em;
     line-height: 50px;
@@ -1010,7 +1164,7 @@
     margin-right: 10px;
 }
 
-.p_coded.view .pc_product .btn_wrap button {
+.mall_view .pc_product .btn_wrap button {
     width: 100%;
     padding: 15px;
     font-size: 1.25em;
@@ -1018,21 +1172,21 @@
     font-weight: 600
 }
 
-.p_coded.view .pc_product .btn_wrap button:last-child {
+.mall_view .pc_product .btn_wrap button:last-child {
     margin-right: 0;
 }
 
-.p_coded.view .pc_details {
+.mall_view .pc_details {
     border-top: 1px solid #C8C8CB;
     padding-top: 35px;
 }
 
 @media screen and (max-width: 1500px) {
-    .p_coded.view .pc_info.flex {
+    .mall_view .pc_info.flex {
         display: block;
     }
 
-    .p_coded.view .pc_info dl {
+    .mall_view .pc_info dl {
         width: 100%;
         border: 0;
     }
@@ -1040,17 +1194,17 @@
 }
 
 @media screen and (max-width: 1300px) {
-    .p_coded.view .box2 > .flex {
+    .mall_view .box2 > .flex {
         display: block;
     }
 
-    .p_coded.view .pc_slider {
+    .mall_view .pc_slider {
         width: 100%;
         margin-right: 0px;
         margin-bottom: 40px;
     }
 
-    .p_coded.view .swiper-slide {
+    .mall_view .swiper-slide {
         width: 100%;
         height: 500px;
     }
@@ -1058,19 +1212,19 @@
 }
 
 @media screen and (max-width: 550px) {
-    .p_coded.view .box2 {
+    .mall_view .box2 {
         padding: 20px;
     }
 
-    .p_coded.view .swiper-slide {
+    .mall_view .swiper-slide {
         height: 300px;
     }
 
-    .p_coded.view .swiper-free-mode > .swiper-wrapper .swiper-slide {
+    .mall_view .swiper-free-mode > .swiper-wrapper .swiper-slide {
         height: 60px;
     }
 
-    .p_coded.view .pc_product .btn_wrap button {
+    .mall_view .pc_product .btn_wrap button {
         font-size: 1em;
         margin-right: 2px;
     }
@@ -1169,10 +1323,30 @@
 .mall.main .swiper {
     border-radius: 5px;
     overflow: hidden;
+    width: 100% !important;
+}
+
+.mall.main .swiper img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .mall.latest {
     align-items: flex-start;
+}
+
+.mall.main .mall_list > ul {
+    flex-wrap: nowrap;
+}
+
+.mall.main .mall_list > ul li {
+    width: calc(100% / 4);
+}
+
+.mall.main .mall_list .img {
+    width: calc(100%);
+    height: 150px
 }
 
 .mall_list h3 > span {
@@ -1188,6 +1362,27 @@
 
 .mm_notice .box1 {
     height: 217px;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .mall.main .swiper {
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .mall.main .swiper {
+        height: 150px;
+    }
+
+    .mall.main .mall_list > ul {
+        flex-wrap: wrap;
+    }
+
+    .mall.main .mall_list > ul li {
+        width: calc((100% / 2) - 26px);
+    }
 }
 
 
@@ -1942,7 +2137,6 @@
 .homepage_qna {
     padding: 25px
 }
-
 
 /*홈페이지 CS*/
 .cs_info {
